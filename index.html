@@ -20,7 +20,16 @@
 		.play-panel{margin:0 0 75px;padding:clamp(19px,4vw,36px);color:var(--ink);background:var(--paper);border-radius:12px;box-shadow:var(--shadow);scroll-margin-top:20px;animation:panel-in .3s ease both}.play-panel[hidden]{display:none}@keyframes panel-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}.panel-head{display:flex;justify-content:space-between;align-items:start;gap:18px;padding-bottom:16px;border-bottom:1px solid var(--line)}.panel-kicker{margin:0 0 4px;color:#62647b;font-size:10px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.panel-head h2{margin:0;font-size:clamp(27px,4vw,39px);line-height:1;letter-spacing:-.07em}.panel-instructions{margin:8px 0 0;color:var(--muted);font-size:12px}.quiet-button{min-height:37px;padding:0 11px;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:5px;background:transparent;color:var(--ink);cursor:pointer;font-weight:800;font-size:11px;white-space:nowrap}.quiet-button:hover{background:var(--paper-dim)}.game-stage{--skin-a:#7385ff;--skin-b:#d6ff5f;display:grid;place-items:center;min-height:265px;padding:22px 0 8px}.game-status{min-height:24px;margin:12px 0 0;font-size:13px;font-weight:850;text-align:center}.game-actions{display:flex;justify-content:center;gap:10px;margin-top:12px}.action-button{min-height:39px;padding:0 15px;color:white;background:var(--night);border:1px solid var(--night);border-radius:5px;cursor:pointer;font-weight:850;font-size:11px}.action-button:hover{background:#30345d}.action-button.secondary{color:var(--ink);background:transparent}.action-button.secondary:hover{background:var(--paper-dim)}.game-wallet{margin:0 0 8px;padding:7px 10px;border-radius:5px;background:rgba(23,26,54,.06);font-size:10px;font-weight:800;text-align:center}.game-wallet strong{color:#53611c}
 		.ttt-board{display:grid;grid-template-columns:repeat(3,minmax(72px,98px));gap:8px}.ttt-cell{aspect-ratio:1;display:grid;place-items:center;border:0;border-radius:8px;background:color-mix(in srgb,var(--skin-a) 13%,#eeedf4);color:var(--ink);font-size:clamp(42px,9vw,66px);line-height:1;font-weight:900;cursor:pointer}.ttt-cell:disabled{cursor:default}.ttt-cell.mark-x{color:var(--skin-a)}.ttt-cell.mark-o{color:var(--skin-b)}.memory-board{display:grid;grid-template-columns:repeat(4,minmax(52px,72px));gap:8px}.memory-card{aspect-ratio:1;border:0;border-radius:8px;background:var(--skin-a);color:white;cursor:pointer;font-size:clamp(23px,5vw,33px);font-weight:850;box-shadow:0 4px 0 rgba(0,0,0,.16)}.memory-card.revealed{color:var(--ink);background:#ebeaf2}.memory-card.matched{color:#203115;background:var(--skin-b);cursor:default}.board-meta{display:flex;justify-content:center;gap:18px;margin-top:13px;color:var(--muted);font-size:11px;font-weight:750}.board-meta strong{color:var(--ink)}.board-2048-wrap{display:grid;grid-template-columns:minmax(0,350px);gap:9px;width:min(100%,350px)}.score-row{display:flex;justify-content:space-between;align-items:center;gap:8px}.score-chip{min-width:85px;padding:5px 9px;border-radius:5px;background:var(--night);color:white;text-align:center;font-size:9px;text-transform:uppercase;letter-spacing:.1em;font-weight:850}.score-chip strong{display:block;color:var(--lime);font-size:16px;letter-spacing:-.03em}.grid-2048{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:8px;border-radius:9px;background:color-mix(in srgb,var(--skin-a) 28%,#b7afa8);touch-action:none;user-select:none}.cell-2048{aspect-ratio:1;display:grid;place-items:center;border-radius:5px;background:rgba(238,228,218,.55);color:var(--ink);font-size:clamp(18px,5vw,29px);font-weight:950;letter-spacing:-.06em}.cell-2048[data-value]:not([data-value="0"]){background:color-mix(in srgb,var(--skin-b) calc(min(80, 22 + var(--tile-level, 0) * 8) * 1%),#f5eedf)}.keyboard-hint{color:var(--muted);text-align:center;font-size:10px}
 		.card-table,.blackjack-table{width:min(100%,710px);padding:clamp(14px,4vw,27px);border:1px solid color-mix(in srgb,var(--skin-a) 60%,#315e4b);border-radius:15px;color:white;background:radial-gradient(ellipse at center,color-mix(in srgb,var(--skin-a) 42%,#28704f) 0%,#164b39 75%,#11392f 100%);box-shadow:inset 0 0 0 6px rgba(255,255,255,.035),0 12px 28px rgba(10,35,27,.18)}.table-label{margin:0 0 7px;color:#d3edda;font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.poker-seats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.poker-seat{min-width:0;padding:9px 6px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:rgba(0,0,0,.12);text-align:center}.poker-seat.current{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime)}.seat-name{display:block;font-size:11px;font-weight:900}.seat-meta{display:block;margin-top:2px;color:#d7e8df;font-size:9px}.playing-cards,.hand-row{display:flex;justify-content:center;gap:4px;min-height:64px;margin-top:8px}.playing-card{width:42px;height:60px;display:grid;align-content:space-between;padding:4px;border:1px solid #d9d8d4;border-radius:6px;background:#fffdf6;color:#1d2038;text-align:left;font-size:12px;font-weight:950;box-shadow:0 3px 4px rgba(0,0,0,.18)}.playing-card .suit{font-size:16px;text-align:right;line-height:.8}.playing-card.red{color:#df514f}.playing-card.back{place-items:center;border-color:var(--skin-b);color:white;background:repeating-linear-gradient(45deg,var(--skin-a) 13%,#eeedf4);font-size:20px}.community-wrap{margin:15px 0 8px;text-align:center}.community-cards{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;min-height:64px}.poker-pot{margin-top:8px;color:var(--lime);font-size:11px;font-weight:900}.round-controls{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-top:12px}.round-controls .action-button{min-height:36px}.blackjack-table{width:min(100%,600px)}.blackjack-hand{margin:8px 0 17px;text-align:center}.hand-total{margin-top:6px;color:#e7f4ea;font-size:11px;font-weight:800}.game-select{max-width:100%;min-height:34px;padding:0 8px;border:1px solid rgba(255,255,255,.35);border-radius:5px;color:white;background:#184b39;font-size:11px}.slot-machine{width:min(100%,410px);padding:20px;border:3px solid var(--night);border-radius:14px;background:var(--skin-a);box-shadow:7px 7px 0 rgba(23,26,54,.14);text-align:center}.slot-reels{display:grid;grid-template-columns:repeat(3,minmax(56px,1fr));gap:8px;padding:9px;border:2px solid rgba(23,26,54,.25);border-radius:9px;background:color-mix(in srgb,var(--skin-b) 64%,var(--skin-a))}.slot-reel{min-height:80px;display:grid;place-items:center;border-radius:6px;background:#fffdf6;color:var(--night);font-size:clamp(35px,9vw,54px);box-shadow:inset 0 -5px 0 rgba(23,26,54,.08)}.slot-machine .action-button{margin-top:14px}.slot-note{margin:9px 0 0;color:#e9e8eb;font-size:10px;font-weight:800}.slot-machine .slot-note{color:#351f36}.tetris-wrap{width:min(100%,350px)}.tetris-hud{display:flex;justify-content:space-between;gap:7px;margin-bottom:8px}.tetris-stat{flex:1;padding:5px;border-radius:5px;background:var(--night);color:white;text-align:center;font-size:8px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}.tetris-stat strong{display:block;color:var(--skin-b);font-size:15px;letter-spacing:0}.tetris-board{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;padding:6px;border:3px solid color-mix(in srgb,var(--skin-a) 65%,#343858);border-radius:7px;background:#171a36;aspect-ratio:1/2;touch-action:none}.tetris-cell{min-width:0;border-radius:3px;background:#292d4c}.tetris-cell.filled{background:var(--block-color,var(--skin-a));box-shadow:inset 0 0 0 2px rgba(255,255,255,.27),inset 0 -4px 0 rgba(0,0,0,.12)}		.tetris-controls{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:9px}.tetris-controls button{min-height:39px;padding:0 4px;border:1px solid var(--line);border-radius:5px;background:var(--paper-dim);color:var(--ink);cursor:pointer;font-size:10px;font-weight:900}.tetris-controls .drop-control{background:var(--skin-b);border-color:var(--skin-b)}		.monopoly-preview{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;width:150px;padding:8px;border-radius:8px;background:rgba(255,255,255,.72);box-shadow:inset 0 0 0 1px rgba(23,26,54,.08)}.monopoly-preview span{display:grid;place-items:center;padding:5px;border-radius:5px;background:#e5ebff;color:#111827;font-size:12px;font-weight:900}.monopoly-layout{display:grid;grid-template-columns:220px minmax(0,1fr) 220px;gap:18px;width:min(100%,860px)}.monopoly-side,.monopoly-controls{padding:14px;border:1px solid var(--line);border-radius:12px;background:rgba(23,26,54,.03)}.monopoly-side h3,.monopoly-controls h3{margin:0 0 10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.monopoly-player-list{display:flex;flex-direction:column;gap:8px}.monopoly-player{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:10px;background:rgba(23,26,54,.06);font-size:11px;font-weight:800;border:1px solid transparent}.monopoly-player.active{outline:2px solid var(--skin-a);background:rgba(115,133,255,.12);border-color:rgba(115,133,255,.4)}.monopoly-token{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--skin-a);color:white;font-size:10px;font-weight:900;box-shadow:inset 0 0 0 2px rgba(255,255,255,.3)}.monopoly-player[data-player="0"] .monopoly-token{background:#7385ff}.monopoly-player[data-player="1"] .monopoly-token{background:#f59e0b}.monopoly-player[data-player="2"] .monopoly-token{background:#34d399}.monopoly-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:12px;border-radius:16px;background:linear-gradient(180deg,#f6f5f3,#e8e7eb);border:1px solid rgba(23,26,54,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}.monopoly-tile{position:relative;min-height:110px;padding:8px 7px;border:1px solid rgba(23,26,54,.12);border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(239,240,246,.8));color:var(--ink);font-size:11px;font-weight:800;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.monopoly-tile.property{background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(247,248,251,.9));box-shadow:inset 0 -26px 0 rgba(255,255,255,.18)}.monopoly-tile.property .monopoly-bar{height:7px;border-radius:999px;background:var(--tile-color,#7385ff);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}.monopoly-tile.start{background:linear-gradient(180deg,#ecfdf5,#d1fae5)}.monopoly-tile.start .monopoly-price{color:#166534}.monopoly-tile .monopoly-name{font-size:10px;line-height:1.2;letter-spacing:-.02em}.monopoly-tile .monopoly-price{font-size:9px;color:var(--muted)}.monopoly-tile .monopoly-owner{font-size:8px;color:var(--muted);line-height:1.2}.monopoly-tokens{display:flex;flex-wrap:wrap;gap:4px}.monopoly-tokens span{display:grid;place-items:center;width:16px;height:16px;border-radius:50%;background:var(--night);color:white;font-size:8px;font-weight:900;box-shadow:inset 0 0 0 2px rgba(255,255,255,.2)}.monopoly-tokens span[data-player="0"]{background:#7385ff}.monopoly-tokens span[data-player="1"]{background:#f59e0b}.monopoly-tokens span[data-player="2"]{background:#34d399}.monopoly-status{margin:10px 0 0;color:var(--muted);font-size:11px;line-height:1.5}.monopoly-controls .round-controls{margin-top:10px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}.monopoly-controls .action-button.secondary{color:var(--ink)}		.footer{padding:19px 0 28px;display:flex;align-items:center;justify-content:space-between;gap:18px;color:#adafc3;border-top:1px solid rgba(255,255,255,.13);font-size:10px}.footer strong{color:var(--lime)}.footer-mark{color:var(--coral);font-weight:900;letter-spacing:.06em}.toast{position:fixed;right:18px;bottom:18px;z-index:5;max-width:min(360px,calc(100vw - 36px));padding:12px 15px;border:1px solid rgba(214,255,95,.45);border-radius:7px;color:white;background:#252849;box-shadow:0 12px 35px rgba(0,0,0,.3);font-size:12px;font-weight:800}.toast[hidden]{display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}		.roulette-layout{width:min(100%,820px);display:grid;grid-template-columns:minmax(260px,1fr) minmax(250px,.9fr);align-items:center;gap:clamp(18px,4vw,38px)}.roulette-wheel-shell{position:relative;width:min(100%,390px);aspect-ratio:1;justify-self:center;border-radius:50%;padding:12px;background:linear-gradient(135deg,#f4d876,#8f672c,#f7e8a2,#765225);box-shadow:0 12px 28px rgba(0,0,0,.25),inset 0 0 0 3px rgba(255,255,255,.38)}.roulette-wheel{position:absolute;inset:12px;border:8px solid #eadb9c;border-radius:50%;overflow:hidden;transform-origin:center;transition:transform 2.25s cubic-bezier(.12,.72,.08,1);box-shadow:inset 0 0 0 7px #d6bd6e,inset 0 0 0 10px rgba(255,255,255,.3)}.roulette-number{position:absolute;left:50%;top:50%;width:24px;margin:-9px 0 0 -12px;color:#fff;font-size:clamp(9px,1.2vw,12px);font-weight:900;text-align:center;text-shadow:0 1px 2px #000;transform:rotate(var(--angle)) translateY(calc(-1 * (min(390px, 100vw) / 2 - 39px))) rotate(calc(-1 * var(--angle)));transform-origin:center}.roulette-number.green{color:#d6ff5f}.roulette-hub{position:absolute;left:50%;top:50%;width:28%;aspect-ratio:1;display:grid;place-items:center;transform:translate(-50%,-50%);border:4px solid #dfc878;border-radius:50%;background:radial-gradient(circle at 35% 28%,#28704f,#102e22);color:#f5e6a0;font-size:clamp(20px,4vw,34px);font-weight:950;box-shadow:0 2px 8px rgba(0,0,0,.35)}.roulette-pointer{position:absolute;z-index:2;left:50%;top:-2px;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:25px solid #fff4b6;filter:drop-shadow(0 2px 2px rgba(0,0,0,.55))}.roulette-controls{width:100%;display:grid;gap:9px;padding:17px;border:1px solid var(--line);border-radius:10px;background:rgba(23,26,54,.045)}.roulette-controls h3,.roulette-controls p{margin:0}.roulette-controls label{font-size:11px;font-weight:850;color:var(--muted)}.roulette-controls select{width:100%;min-height:36px;padding:0 9px;border:1px solid var(--line);border-radius:5px;background:#fff;color:var(--ink)}.roulette-result{min-height:47px;display:flex;align-items:center;gap:10px;padding:8px;border:1px solid rgba(23,26,54,.12);border-radius:6px;background:linear-gradient(110deg,color-mix(in srgb,var(--skin-a) 16%,#fff),color-mix(in srgb,var(--skin-b) 24%,#fff));font-size:11px;font-weight:800}.roulette-result b{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:50%;color:white}.roulette-result b.red{background:#bc303a}.roulette-result b.black{background:#171a36}.roulette-result b.green{background:#167148}.roulette-paytable{color:var(--muted);font-size:10px;line-height:1.5}.roulette-spin{border-color:var(--night)!important;background:var(--night)!important;color:#fff!important}.roulette-card-wheel{width:70px;height:70px;aspect-ratio:1;border:4px solid #e9cf7e;border-radius:50%;background:conic-gradient(#187448 0deg 10deg,#b62f3b 10deg 20deg,#171a36 20deg 30deg,#b62f3b 30deg 40deg,#171a36 40deg 50deg,#b62f3b 50deg 60deg,#171a36 60deg 70deg,#b62f3b 70deg 80deg,#171a36 80deg 90deg,#b62f3b 90deg 100deg,#171a36 100deg 110deg,#b62f3b 110deg 120deg,#171a36 120deg 130deg,#b62f3b 130deg 140deg,#171a36 140deg 150deg,#b62f3b 150deg 160deg,#171a36 160deg 170deg,#b62f3b 170deg 180deg,#171a36 180deg 190deg,#b62f3b 190deg 200deg,#171a36 200deg 210deg,#b62f3b 210deg 220deg,#171a36 220deg 230deg,#b62f3b 230deg 240deg,#171a36 240deg 250deg,#b62f3b 250deg 260deg,#171a36 260deg 270deg,#b62f3b 270deg 280deg,#171a36 280deg 290deg,#b62f3b 290deg 300deg,#171a36 300deg 310deg,#b62f3b 310deg 320deg,#171a36 320deg 330deg,#b62f3b 330deg 340deg,#171a36 340deg 350deg,#187448 350deg 360deg);box-shadow:0 4px 0 rgba(23,26,54,.15)}.roulette-card-wheel span{display:none}@media(max-width:700px){.roulette-layout{grid-template-columns:1fr;max-width:440px}.roulette-wheel-shell{width:min(100%,340px)}.roulette-number{transform:rotate(var(--angle)) translateY(calc(-1 * (min(340px, 100vw) / 2 - 36px))) rotate(calc(-1 * var(--angle)))}}
+		.monopoly-tile.chance,.monopoly-tile.communityChest{background:linear-gradient(145deg,#fff8e4,#f3e7c7)}.monopoly-tile.tax,.monopoly-tile.fine{background:linear-gradient(145deg,#ffe9e6,#f3d0ca)}.monopoly-tile.freeParking{background:linear-gradient(145deg,#e1f5e8,#c5e7d2);border-color:#77aa85}.monopoly-tile.freeParking .monopoly-price{font-size:11px;font-weight:950;color:#24623b}.monopoly-pot-display{margin:8px 0;padding:10px;border:1px solid #77aa85;border-radius:8px;background:#e1f5e8;color:#24623b;font-size:12px;font-weight:900;text-align:center}
+		.roulette-layout{width:min(100%,820px);display:grid;grid-template-columns:minmax(260px,1fr) minmax(250px,.9fr);align-items:center;gap:clamp(18px,4vw,38px)}.roulette-wheel-shell{position:relative;width:min(100%,390px);aspect-ratio:1;justify-self:center;border-radius:50%;padding:12px;background:linear-gradient(135deg,#f4d876,#8f672c,#f7e8a2,#765225);box-shadow:0 12px 28px rgba(0,0,0,.25),inset 0 0 0 3px rgba(255,255,255,.38)}.roulette-wheel{position:absolute;inset:12px;border:8px solid #eadb9c;border-radius:50%;overflow:hidden;transform-origin:center;transition:transform 2.25s cubic-bezier(.12,.72,.08,1);box-shadow:inset 0 0 0 7px #d6bd6e,inset 0 0 0 10px rgba(255,255,255,.3)}.roulette-number{position:absolute;left:50%;top:50%;width:24px;margin:-9px 0 0 -12px;color:#fff;font-size:clamp(9px,1.2vw,12px);font-weight:900;text-align:center;text-shadow:0 1px 2px #000;transform:rotate(var(--angle)) translateY(calc(-1 * (min(390px, 100vw) / 2 - 39px))) rotate(calc(-1 * var(--angle)));transform-origin:center}.roulette-number.green{color:#d6ff5f}.roulette-hub{position:absolute;left:50%;top:50%;width:28%;aspect-ratio:1;display:grid;place-items:center;transform:translate(-50%,-50%);border:4px solid #dfc878;border-radius:50%;background:radial-gradient(circle at 35% 28%,#28704f,#102e22);color:#f5e6a0;font-size:clamp(20px,4vw,34px);font-weight:950;box-shadow:0 2px 8px rgba(0,0,0,.35)}.roulette-pointer{position:absolute;z-index:2;left:50%;top:-2px;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:25px solid #fff4b6;filter:drop-shadow(0 2px 2px rgba(0,0,0,.55))}.roulette-controls{width:100%;display:grid;gap:9px;padding:17px;border:1px solid var(--line);border-radius:10px;background:rgba(23,26,54,.045)}.roulette-controls h3,.roulette-controls p{margin:0}.roulette-controls label{font-size:11px;font-weight:850;color:var(--muted)}.roulette-controls select{width:100%;min-height:36px;padding:0 9px;border:1px solid var(--line);border-radius:5px;background:#fff;color:var(--ink)}.roulette-result{min-height:47px;display:flex;align-items:center;gap:10px;padding:8px;border:1px solid rgba(23,26,54,.12);border-radius:6px;background:linear-gradient(110deg,color-mix(in srgb,var(--skin-a) 16%,#fff),color-mix(in srgb,var(--skin-b) 24%,#fff));font-size:11px;font-weight:800}.roulette-result b{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:50%;color:white}.roulette-result b.red{background:#bc303a}.roulette-result b.black{background:#171a36}.roulette-result b.green{background:#167148}.roulette-paytable{color:var(--muted);font-size:10px;line-height:1.5}.roulette-spin{border-color:var(--night)!important;background:var(--night)!important;color:#fff!important}.roulette-card-wheel{width:70px;height:70px;aspect-ratio:1;border:4px solid #e9cf7e;border-radius:50%;background:conic-gradient(#187448 0deg 10deg,#b62f3b 10deg 20deg,#171a36 20deg 30deg,#b62f3b 30deg 40deg,#171a36 40deg 50deg,#b62f3b 50deg 60deg,#171a36 60deg 70deg,#b62f3b 70deg 80deg,#171a36 80deg 90deg,#b62f3b 90deg 100deg,#171a36 100deg 110deg,#b62f3b 110deg 120deg,#171a36 120deg 130deg,#b62f3b 130deg 140deg,#171a36 140deg 150deg,#b62f3b 150deg 160deg,#171a36 160deg 170deg,#b62f3b 170deg 180deg,#171a36 180deg 190deg,#b62f3b 190deg 200deg,#171a36 200deg 210deg,#b62f3b 210deg 220deg,#171a36 220deg 230deg,#b62f3b 230deg 240deg,#171a36 240deg 250deg,#b62f3b 250deg 260deg,#171a36 260deg 270deg,#b62f3b 270deg 280deg,#171a36 280deg 290deg,#b62f3b 290deg 300deg,#171a36 300deg 310deg,#b62f3b 310deg 320deg,#171a36 320deg 330deg,#b62f3b 330deg 340deg,#171a36 340deg 350deg,#187448 350deg 360deg);box-shadow:0 4px 0 rgba(23,26,54,.15)}.roulette-card-wheel span{display:none}@media(max-width:700px){.roulette-layout{grid-template-columns:1fr;max-width:440px}.roulette-wheel-shell{width:min(100%,340px)}.roulette-number{transform:rotate(var(--angle)) translateY(calc(-1 * (min(340px, 100vw) / 2 - 36px))) rotate(calc(-1 * var(--angle)))}}
 		@media(max-width:980px) and (min-width:600px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skin-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:760px){.shell{width:min(calc(100% - 32px),580px)}.hero{padding-top:65px}.hero:after{right:1%;top:13%;font-size:65px}.hero-bottom{align-items:start;flex-direction:column}.status-strip{margin-bottom:43px}.game-grid{grid-template-columns:1fr;gap:12px}.game-card{min-height:245px}.preview{height:88px}.section-heading,.shop-intro{align-items:start;flex-direction:column}.games-section{padding-bottom:52px}.shop-section{padding:24px 0 52px}.skin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.play-panel{margin-bottom:52px}}@media(max-width:480px){.shell{width:calc(100% - 28px)}.topbar{height:66px}.top-links{gap:10px;font-size:11px}.free-pill{padding:6px 8px;font-size:9px}.brand{font-size:15px}.brand-mark{width:25px;height:25px}.wallet-strip{grid-template-columns:1fr;padding:14px}.wallet-identity{gap:10px}.profile-form{justify-content:flex-start;flex-wrap:wrap}.profile-form input{width:min(160px,45vw)}.economy-note{grid-column:auto}.status-strip{align-items:start;flex-direction:column}.status-note{text-align:left}.panel-head{gap:8px}.quiet-button{padding:0 8px;font-size:10px}.ttt-board{grid-template-columns:repeat(3,minmax(65px,82px))}.memory-board{grid-template-columns:repeat(4,minmax(48px,62px));gap:6px}.poker-seats{gap:4px}.poker-seat{padding:6px 3px}.playing-card{width:34px;height:52px;padding:3px;font-size:10px}.playing-card .suit{font-size:13px}.card-table{padding:12px 8px}.slot-machine{padding:13px}.slot-reel{min-height:68px}.footer{align-items:start;flex-direction:column;gap:5px}.skin-grid{gap:8px}.skin-card{padding:10px}.game-stage{padding-top:18px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+		/* The 12 spaces form a square perimeter; the shared penalty pot sits in its 2×2 center. */
+		.monopoly-board{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(4,minmax(105px,1fr))}
+		.monopoly-board-center{grid-column:2/4;grid-row:2/4;display:grid;align-content:center;justify-items:center;gap:8px;min-width:0;padding:12px;border:2px dashed #77aa85;border-radius:12px;background:linear-gradient(145deg,#e1f5e8,#c5e7d2);color:#24623b;text-align:center}
+		.monopoly-board-center strong{font-size:clamp(11px,1.4vw,16px);letter-spacing:.08em}
+		.monopoly-board-center span{font-size:clamp(18px,2.4vw,27px);font-weight:950}
+		.monopoly-board-center small{font-size:9px}
+		@media(max-width:850px){.monopoly-layout{grid-template-columns:1fr;width:min(100%,560px)}}
 	</style>
 	<!-- Theme polish and additional game styling. Later CSS rules win when the same selector appears earlier. -->
 	<style>
@@ -185,7 +194,7 @@
 			slots:{title:'Slots · free spins',instructions:'Spin all three reels for free—there is no entry fee. Outcomes change fictional NOT COIN only; losses are capped by your balance.'},
 			blackjack:{title:'Blackjack',instructions:'Choose a small virtual stake. Wins pay 2×, pushes refund the stake, and losses may put NOT COIN into virtual debt. Debt is capped at 300,000; the hand becomes free practice at the cap.'},
 			tetris:{title:'Tetris',instructions:'Move with ← → / A D, drop with ↓ / S, rotate ↑ / W, hard-drop Space. Clear lines for coins.'},
-			monopoly:{title:'Monopoly vs bots',instructions:'Buy properties, collect rent, and outlast the two bots on the board. Roll the dice, buy when you can, and keep the strongest cash position.'},
+			monopoly:{title:'Monopoly vs bots',instructions:'Buy properties, collect rent, and outlast two bots. Taxes, fines, and penalty cards build the Free Parking pot; land there to collect it.'},
 			connect4:{title:'Connect Four',instructions:'You are yellow; the bot is red. Drop a disc into any column and connect four before the bot does.'},
 			minesweeper:{title:'Minesweeper',instructions:'Left-click to reveal safe tiles. Right-click to flag a suspected mine. Clear all safe tiles to win.'},
 			roulette:{title:'Roulette · free-play table',instructions:'European single-zero wheel. Choose red/black, even/odd, or a number. Bets use fictional NOT COIN and can create debt down to −300,000; spins are free practice at that limit.'},
@@ -253,19 +262,35 @@
 		// ==== Monopoly game state and rules ==== //
 		// startMonopoly() is the reset point. Each board item has a type/name/price/rent/owner;
 		// owner is null until purchased, then it stores a player ID (0 = human, 1–2 = bots).
+		// Tax/fine amounts and the two small card decks are configured here; penalty payments go to monopoly.pot.
 		function startMonopoly(){
 			const board=[
 				{type:'start',name:'GO',price:0,rent:0,owner:null},
 				{type:'property',name:'Maple Lane',price:120,rent:18,owner:null},
+				{type:'chance',name:'Chance',price:0,rent:0,owner:null},
 				{type:'property',name:'Cedar Row',price:140,rent:22,owner:null},
+				{type:'tax',name:'Income Tax',amount:100,price:0,rent:0,owner:null},
+				{type:'freeParking',name:'Free Parking',price:0,rent:0,owner:null},
 				{type:'property',name:'Town Square',price:160,rent:28,owner:null},
+				{type:'communityChest',name:'Community Chest',price:0,rent:0,owner:null},
 				{type:'property',name:'Harbor Point',price:200,rent:36,owner:null},
+				{type:'fine',name:'Speeding Fine',amount:50,price:0,rent:0,owner:null},
 				{type:'property',name:'Silver Avenue',price:220,rent:42,owner:null},
-				{type:'property',name:'Oak Terrace',price:260,rent:50,owner:null},
-				{type:'property',name:'River Walk',price:300,rent:60,owner:null}
+				{type:'property',name:'Oak Terrace',price:260,rent:50,owner:null}
 			];
 			monopoly={
 				board,
+				pot:0,
+				chanceCards:[
+					{type:'penalty',amount:75,text:'Pay $75 for city repairs.'},
+					{type:'penalty',amount:50,text:'Pay a $50 traffic fine.'},
+					{type:'reward',amount:100,text:'Collect a $100 dividend.'}
+				],
+				communityCards:[
+					{type:'penalty',amount:50,text:'Pay $50 in school fees.'},
+					{type:'penalty',amount:100,text:'Pay a $100 hospital bill.'},
+					{type:'reward',amount:50,text:'A bank refund arrives: collect $50.'}
+				],
 				players:[
 					{id:0,name:account.handle||'You',token:'P',money:1500,position:0,owned:[]},
 					{id:1,name:'Bot 1',token:'B1',money:1500,position:0,owned:[]},
@@ -274,92 +299,100 @@
 				turn:0,
 				phase:'ready',
 				message:'Your turn — roll the dice.',
+				lastEvent:'',
 				winner:null
 			};
 			setStatus('Your turn — roll the dice.');
 		}
-		// Resolve where a player lands: buy an open property, pay its owner, or report a normal tile.
-		function resolveMonopolyLanding(playerIndex,rolled,source='human'){
+		// Collect taxes, fines, and card penalties here so every player pays into the same Free Parking pot.
+		function payMonopolyPot(player,amount,reason){
+			const paid=Math.min(player.money,amount);
+			player.money-=paid;
+			monopoly.pot+=paid;
+			return `${player.name} paid $${paid} ${reason}; it went to the Free Parking pot.${paid<amount?` ${player.name} went bankrupt.`:''}`;
+		}
+		function finishMonopolyTurn(playerIndex,message){
+			monopoly.message=message;
+			monopoly.lastEvent=message;
+			monopoly.phase='ready';
+			setStatus(message);
+			const active=monopoly.players.filter(player=>player.money>0);
+			if(active.length<=1){
+				monopoly.winner=active[0]||null;
+				monopoly.phase='done';
+				monopoly.message=monopoly.winner?`${monopoly.winner.name} wins the board!`:'No active players remain.';
+				return renderMonopoly(false);
+			}
+			const next=nextMonopolyPlayerIndex(playerIndex);
+			if(next===0){
+				monopoly.turn=0;
+				monopoly.message='Your turn — roll the dice.';
+				setStatus(monopoly.message);
+				return renderMonopoly(false);
+			}
+			scheduleMonopolyBot(next);
+			return renderMonopoly(false);
+		}
+		// Resolve movement and all tile effects for both the player and bots.
+		function resolveMonopolyLanding(playerIndex,rolled){
 			if(!monopoly||monopoly.winner)return;
 			const player=monopoly.players[playerIndex];
 			if(!player||player.money<=0)return;
+			const previousPosition=player.position;
 			player.position=(player.position+rolled)%monopoly.board.length;
+			const passedGo=previousPosition+rolled>=monopoly.board.length;
+			if(passedGo)player.money+=200;
 			const tile=monopoly.board[player.position];
-			let message=`${player.name} rolled ${rolled} and landed on ${tile.name}.`;
+			let message=`${player.name} rolled ${rolled} and landed on ${tile.name}.${passedGo?' Collected $200 for passing GO.':''}`;
 			if(tile.type==='property'){
 				if(tile.owner===null){
 					if(playerIndex===0){
 						monopoly.phase='buy';
-						message += ` ${tile.name} is available for $${tile.price}.`;
-						monopoly.message=message;
+						monopoly.message=`${message} ${tile.name} is available for $${tile.price}.`;
+						monopoly.lastEvent=monopoly.message;
+						setStatus(monopoly.message);
 						return renderMonopoly(false);
 					}
-					if(player.money>=tile.price){
+					if(player.money>=tile.price && (player.money>1500||Math.random()<0.7)){
 						player.money-=tile.price;
 						tile.owner=playerIndex;
 						player.owned.push(player.position);
-						message += ` ${player.name} bought it for $${tile.price}.`;
-					}else{
-						message += ` ${player.name} passed on buying it.`;
-					}
+						message+=` ${player.name} bought it for $${tile.price}.`;
+					}else message+=` ${player.name} passed on buying it.`;
 				}else if(tile.owner!==playerIndex){
 					const owner=monopoly.players[tile.owner];
-					if(player.money>=tile.rent){
-						player.money-=tile.rent;
-						owner.money+=tile.rent;
-						message += ` ${player.name} paid $${tile.rent} rent to ${owner.name}.`;
-					}else{
-						const unpaid=Math.min(tile.rent,player.money);
-						player.money=0;
-						owner.money+=unpaid;
-						message += ` ${player.name} went bankrupt paying $${unpaid}.`;
-					}
-				}else{
-					message += ` ${player.name} already owns this property.`;
-				}
+					const paid=Math.min(player.money,tile.rent);
+					player.money-=paid;
+					owner.money+=paid;
+					message+=player.money===0?` ${player.name} went bankrupt paying $${paid} rent to ${owner.name}.`:` ${player.name} paid $${paid} rent to ${owner.name}.`;
+				}else message+=` ${player.name} already owns this property.`;
+			}else if(tile.type==='tax'||tile.type==='fine'){
+				message+=` ${payMonopolyPot(player,tile.amount,tile.type==='tax'?'in tax':'as a fine')}`;
+			}else if(tile.type==='chance'||tile.type==='communityChest'){
+				const cards=tile.type==='chance'?monopoly.chanceCards:monopoly.communityCards;
+				const card=cards[Math.floor(Math.random()*cards.length)];
+				message+=` ${tile.name}: ${card.text}`;
+				if(card.type==='penalty')message+=` ${payMonopolyPot(player,card.amount,'as a card penalty')}`;
+				else{player.money+=card.amount;message+=` ${player.name} collected $${card.amount}.`;}
+			}else if(tile.type==='freeParking'){
+				const collected=monopoly.pot;
+				player.money+=collected;
+				monopoly.pot=0;
+				message+=collected?` ${player.name} collected the $${collected} Free Parking pot.`:' The Free Parking pot is empty.';
 			}
 			if(player.money<=0){
 				player.money=0;
 				player.owned=[];
-				monopoly.players.forEach(other=>{if(other.id!==player.id)other.owned=other.owned.filter(index=>index!==player.position);});
-				const active=monopoly.players.filter(p=>p.money>0);
-				if(active.length<=1){
-					monopoly.winner=active[0]||null;
-					monopoly.phase='done';
-					monopoly.message=monopoly.winner?`${monopoly.winner.name} wins the board!`:'No active owners remain.';
-					setStatus(monopoly.message);
-					return renderMonopoly(false);
-				}
+				monopoly.board.forEach(ownedTile=>{if(ownedTile.owner===playerIndex)ownedTile.owner=null;});
 			}
-			monopoly.message=message;
-			monopoly.phase='ready';
-			if(playerIndex===0){
-				setStatus(message);
-				return renderMonopoly(false);
-			}
-			setStatus(message);
-			const next=(playerIndex+1)%monopoly.players.length;
-			monopoly.turn=next;
-			if(monopoly.players[next].money>0){
-				monopoly.message=`${monopoly.players[next].name} is up next.`;
-				if(next!==0){
-					if(monopolyBotTimer)clearTimeout(monopolyBotTimer);
-					monopolyBotTimer=setTimeout(()=>{
-						if(!monopoly||monopoly.winner||activeGame!=='monopoly')return;
-						monopolyBotTurn(next);
-					},700);
-				}
-			}
-			return renderMonopoly(false);
+			return finishMonopolyTurn(playerIndex,message);
 		}
 		function nextMonopolyPlayerIndex(fromIndex){
 			for(let offset=1;offset<=monopoly.players.length;offset++){
 				const next=(fromIndex+offset)%monopoly.players.length;
-				if(monopoly.players[next].money>0 && next!==0){
-					return next;
-				}
+				if(monopoly.players[next].money>0)return next;
 			}
-			return 0;
+			return -1;
 		}
 		// Bots use a short timeout so their turns are visible instead of happening instantly.
 		function scheduleMonopolyBot(index){
@@ -377,53 +410,9 @@
 		// Bot decisions and movement. Adjust the purchase condition here to make bots more/less willing to buy.
 		function monopolyBotTurn(playerIndex){
 			if(!monopoly||monopoly.winner||monopoly.turn!==playerIndex||playerIndex===0)return;
-			const player=monopoly.players[playerIndex];
 			const rollA=Math.floor(Math.random()*6)+1;
 			const rollB=Math.floor(Math.random()*6)+1;
-			const total=rollA+rollB;
-			const target=(player.position+total)%monopoly.board.length;
-			player.position=target;
-			const tile=monopoly.board[target];
-			let message=`${player.name} rolled ${total} and landed on ${tile.name}.`;
-			if(tile.type==='property'&&tile.owner===null){
-				if(player.money>=tile.price && (player.money > 1500 || Math.random() < 0.7)){
-					player.money-=tile.price;
-					tile.owner=playerIndex;
-					player.owned.push(target);
-					message += ` ${player.name} bought it for $${tile.price}.`;
-				}else{
-					message += ` ${player.name} left it alone.`;
-				}
-			}else if(tile.type==='property'&&tile.owner!==playerIndex){
-				const owner=monopoly.players[tile.owner];
-				if(player.money>=tile.rent){
-					player.money-=tile.rent;
-					owner.money+=tile.rent;
-					message += ` ${player.name} paid $${tile.rent} rent to ${owner.name}.`;
-				}else{
-					owner.money+=player.money;
-					player.money=0;
-					message += ` ${player.name} went bankrupt.`;
-				}
-			}
-			monopoly.message=message;
-			setStatus(message);
-			if(monopoly.players.filter(p=>p.money>0).length<=1){
-				const winner=monopoly.players.find(p=>p.money>0);
-				monopoly.winner=winner||null;
-				monopoly.phase='done';
-				monopoly.message=winner?`${winner.name} wins the board!`:'No remaining players.';
-				return renderMonopoly(false);
-			}
-			const next=nextMonopolyPlayerIndex(playerIndex);
-			if(next===0){
-				monopoly.turn=0;
-				monopoly.phase='ready';
-				monopoly.message='Your turn — roll the dice.';
-				return renderMonopoly(false);
-			}
-			scheduleMonopolyBot(next);
-			return renderMonopoly(false);
+			resolveMonopolyLanding(playerIndex,rollA+rollB);
 		}
 		// Human button actions. The data-monopoly values in renderMonopoly() arrive here as action names.
 		function monopolyAction(action){
@@ -433,37 +422,8 @@
 				const rollA=Math.floor(Math.random()*6)+1;
 				const rollB=Math.floor(Math.random()*6)+1;
 				const total=rollA+rollB;
-				const landed=monopoly.board[(player.position+total)%monopoly.board.length];
-				player.position=(player.position+total)%monopoly.board.length;
-				if(landed.type==='property' && landed.owner===null){
-					monopoly.phase='buy';
-					monopoly.message=`${player.name} rolled ${total} and landed on ${landed.name}. ${landed.name} is available for $${landed.price}.`;
-					setStatus(monopoly.message);
-					return renderMonopoly(false);
-				}
-				if(landed.type==='property' && landed.owner!==null && landed.owner!==0){
-					const owner=monopoly.players[landed.owner];
-					if(player.money>=landed.rent){
-						player.money-=landed.rent;
-						owner.money+=landed.rent;
-						monopoly.message=`${player.name} rolled ${total} and landed on ${landed.name}. Paid $${landed.rent} rent to ${owner.name}.`;
-					}else{
-						owner.money+=player.money;
-						player.money=0;
-						monopoly.message=`${player.name} rolled ${total} and landed on ${landed.name}. Bankruptcy!`;
-					}
-					setStatus(monopoly.message);
-					const next=nextMonopolyPlayerIndex(0);
-					if(next===0){monopoly.message='Your turn — roll the dice.'; return renderMonopoly(false);}
-					scheduleMonopolyBot(next);
-					return renderMonopoly(false);
-				}
-				monopoly.message=`${player.name} rolled ${total} and landed on ${landed.name}.`;
-				setStatus(monopoly.message);
-				const next=nextMonopolyPlayerIndex(0);
-				if(next===0){monopoly.message='Your turn — roll the dice.'; return renderMonopoly(false);}
-				scheduleMonopolyBot(next);
-				return renderMonopoly(false);
+				resolveMonopolyLanding(0,total);
+				return;
 			}
 			if(action==='buy' && monopoly.phase==='buy'){
 				const target=monopoly.board[player.position];
@@ -475,22 +435,12 @@
 				player.money-=target.price;
 				target.owner=0;
 				player.owned.push(player.position);
-				monopoly.phase='ready';
-				monopoly.message=`${player.name} bought ${target.name} for $${target.price}.`;
-				setStatus(monopoly.message);
-				const next=nextMonopolyPlayerIndex(0);
-				if(next===0){monopoly.message='Your turn — roll the dice.'; return renderMonopoly(false);}
-				scheduleMonopolyBot(next);
-				return renderMonopoly(false);
+				finishMonopolyTurn(0,`${player.name} bought ${target.name} for $${target.price}.`);
+				return;
 			}
 			if(action==='skip' && monopoly.phase==='buy'){
-				monopoly.phase='ready';
-				monopoly.message='You passed on the property.';
-				setStatus(monopoly.message);
-				const next=nextMonopolyPlayerIndex(0);
-				if(next===0){monopoly.message='Your turn — roll the dice.'; return renderMonopoly(false);}
-				scheduleMonopolyBot(next);
-				return renderMonopoly(false);
+				finishMonopolyTurn(0,'You passed on the property.');
+				return;
 			}
 		}
 		// Draw the current Monopoly state. Tile markup/classes here must continue to match the .monopoly-* CSS rules.
@@ -498,18 +448,22 @@
 			if(reset||!monopoly)startMonopoly();
 			const current=monopoly.players[monopoly.turn];
 			const tileColorMap=['#7385ff','#f59e0b','#34d399'];
+			const boardSlots=[[1,1],[2,1],[3,1],[4,1],[4,2],[4,3],[4,4],[3,4],[2,4],[1,4],[1,3],[1,2]];
 			stage.innerHTML=`<div class="monopoly-layout"><div class="monopoly-side"><h3>Players</h3><div class="monopoly-player-list">${monopoly.players.map(player=>`<div class="monopoly-player ${monopoly.turn===player.id?'active':''}" data-player="${player.id}"><span class="monopoly-token">${player.token}</span><span>${player.name}</span><strong>$${player.money}</strong></div>`).join('')}</div></div><div class="monopoly-board">${monopoly.board.map((tile,index)=>{
 				const ownerName = tile.owner !== null ? monopoly.players[tile.owner].name : 'Open';
 				const tileClass = tile.type === 'property' ? 'property' : tile.type;
 				const tileColor = tile.type === 'property' && tile.owner !== null ? tileColorMap[tile.owner] : '#7385ff';
-				return `<div class="monopoly-tile ${tileClass}" style="--tile-color:${tileColor};">
+				const [gridColumn,gridRow]=boardSlots[index];
+				const tilePrice = tile.type==='property'?`$${tile.price}`:tile.type==='tax'||tile.type==='fine'?`Pay $${tile.amount}`:tile.type==='chance'||tile.type==='communityChest'?'Draw a card':'';
+				const tileDetail = tile.type==='property'?(tile.owner===null?'Available':`Owner: ${ownerName}`):tile.type==='start'?'Collect $200 when passing':tile.type==='freeParking'?`Pot: $${monopoly.pot}`:tile.type==='tax'||tile.type==='fine'?'Payment adds to pot':'';
+				return `<div class="monopoly-tile ${tileClass}" style="--tile-color:${tileColor};grid-column:${gridColumn};grid-row:${gridRow};">
 					${tile.type==='property'?'<div class="monopoly-bar"></div>':''}
 					<div class="monopoly-name">${tile.name}</div>
-					<div class="monopoly-price">${tile.type==='property'?`$${tile.price}`:'GO'}</div>
-					<div class="monopoly-owner">${tile.type==='property' ? (tile.owner===null ? 'Available' : `Owner: ${ownerName}`) : 'Collect +200'}</div>
+					<div class="monopoly-price">${tilePrice}</div>
+					<div class="monopoly-owner">${tileDetail}</div>
 					<div class="monopoly-tokens">${monopoly.players.filter(player=>player.position===index).map(player=>`<span data-player="${player.id}">${player.token}</span>`).join('')}</div>
 				</div>`;
-			}).join('')}</div><div class="monopoly-controls"><h3>Board state</h3><div class="game-wallet">${current?`${current.name}'s turn`:'Board ready'} · Bank $${monopoly.players.reduce((sum,player)=>sum+player.money,0)}</div>${monopoly.turn===0?`<div class="round-controls"><button class="action-button" type="button" data-monopoly="roll">Roll dice</button>${monopoly.phase==='buy'?'<button class="action-button secondary" type="button" data-monopoly="buy">Buy property</button><button class="action-button secondary" type="button" data-monopoly="skip">Skip</button>':''}</div>`:'<p class="monopoly-status">Bots are moving…</p>'}<p class="monopoly-status">${monopoly.message}</p></div></div>`;
+			}).join('')}<div class="monopoly-board-center"><strong>FREE PARKING</strong><span>$${monopoly.pot}</span><small>Taxes, fines &amp; card penalties</small></div></div><div class="monopoly-controls"><h3>Board state</h3><div class="game-wallet">${current?`${current.name}'s turn`:'Board ready'} · Player cash $${monopoly.players.reduce((sum,player)=>sum+player.money,0)}</div><div class="monopoly-pot-display" aria-live="polite">Free Parking pot · $${monopoly.pot}</div>${monopoly.turn===0?`<div class="round-controls"><button class="action-button" type="button" data-monopoly="roll">Roll dice</button>${monopoly.phase==='buy'?'<button class="action-button secondary" type="button" data-monopoly="buy">Buy property</button><button class="action-button secondary" type="button" data-monopoly="skip">Skip</button>':''}</div>`:'<p class="monopoly-status">Bots are moving…</p>'}${monopoly.lastEvent&&monopoly.lastEvent!==monopoly.message?`<p class="monopoly-status">${monopoly.lastEvent}</p>`:''}<p class="monopoly-status">${monopoly.message}</p></div></div>`;
 			stage.querySelectorAll('[data-monopoly]').forEach(button=>button.addEventListener('click',()=>monopolyAction(button.dataset.monopoly)));
 			if(monopoly.turn!==0 && !monopoly.winner && monopoly.phase==='ready' && activeGame==='monopoly'){setStatus(monopoly.message);}
 		}
