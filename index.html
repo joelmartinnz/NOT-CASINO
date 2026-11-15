@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#17130f">
-	<meta name="description" content="A private virtual game hall with eleven free games and cosmetic rewards earned in play.">
-	<title>Game Hall</title>
+	<meta name="description" content="A private collection of eleven free games and cosmetic rewards by NOT CASINO.">
+	<title>NOT CASINO</title>
 	<!-- ==== Page shell and visual styling ==== -->
 	<!-- CSS notes: :root contains shared color/font variables; selectors beginning with "." target class names in the HTML.
 	     The @media rules near the end adjust the layout for smaller screens. -->
@@ -23,9 +23,23 @@
 		.monopoly-tile.chance,.monopoly-tile.communityChest{background:linear-gradient(145deg,#fff8e4,#f3e7c7)}.monopoly-tile.tax,.monopoly-tile.fine{background:linear-gradient(145deg,#ffe9e6,#f3d0ca)}.monopoly-tile.freeParking{background:linear-gradient(145deg,#e1f5e8,#c5e7d2);border-color:#77aa85}.monopoly-tile.freeParking .monopoly-price{font-size:11px;font-weight:950;color:#24623b}.monopoly-pot-display{margin:8px 0;padding:10px;border:1px solid #77aa85;border-radius:8px;background:#e1f5e8;color:#24623b;font-size:12px;font-weight:900;text-align:center}
 		.roulette-layout{width:min(100%,820px);display:grid;grid-template-columns:minmax(260px,1fr) minmax(250px,.9fr);align-items:center;gap:clamp(18px,4vw,38px)}.roulette-wheel-shell{position:relative;width:min(100%,390px);aspect-ratio:1;justify-self:center;border-radius:50%;padding:12px;background:linear-gradient(135deg,#f4d876,#8f672c,#f7e8a2,#765225);box-shadow:0 12px 28px rgba(0,0,0,.25),inset 0 0 0 3px rgba(255,255,255,.38)}.roulette-wheel{position:absolute;inset:12px;border:8px solid #eadb9c;border-radius:50%;overflow:hidden;transform-origin:center;transition:transform 2.25s cubic-bezier(.12,.72,.08,1);box-shadow:inset 0 0 0 7px #d6bd6e,inset 0 0 0 10px rgba(255,255,255,.3)}.roulette-number{position:absolute;left:50%;top:50%;width:24px;margin:-9px 0 0 -12px;color:#fff;font-size:clamp(9px,1.2vw,12px);font-weight:900;text-align:center;text-shadow:0 1px 2px #000;transform:rotate(var(--angle)) translateY(calc(-1 * (min(390px, 100vw) / 2 - 39px))) rotate(calc(-1 * var(--angle)));transform-origin:center}.roulette-number.green{color:#d6ff5f}.roulette-hub{position:absolute;left:50%;top:50%;width:28%;aspect-ratio:1;display:grid;place-items:center;transform:translate(-50%,-50%);border:4px solid #dfc878;border-radius:50%;background:radial-gradient(circle at 35% 28%,#28704f,#102e22);color:#f5e6a0;font-size:clamp(20px,4vw,34px);font-weight:950;box-shadow:0 2px 8px rgba(0,0,0,.35)}.roulette-pointer{position:absolute;z-index:2;left:50%;top:-2px;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:25px solid #fff4b6;filter:drop-shadow(0 2px 2px rgba(0,0,0,.55))}.roulette-controls{width:100%;display:grid;gap:9px;padding:17px;border:1px solid var(--line);border-radius:10px;background:rgba(23,26,54,.045)}.roulette-controls h3,.roulette-controls p{margin:0}.roulette-controls label{font-size:11px;font-weight:850;color:var(--muted)}.roulette-controls select{width:100%;min-height:36px;padding:0 9px;border:1px solid var(--line);border-radius:5px;background:#fff;color:var(--ink)}.roulette-result{min-height:47px;display:flex;align-items:center;gap:10px;padding:8px;border:1px solid rgba(23,26,54,.12);border-radius:6px;background:linear-gradient(110deg,color-mix(in srgb,var(--skin-a) 16%,#fff),color-mix(in srgb,var(--skin-b) 24%,#fff));font-size:11px;font-weight:800}.roulette-result b{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:50%;color:white}.roulette-result b.red{background:#bc303a}.roulette-result b.black{background:#171a36}.roulette-result b.green{background:#167148}.roulette-paytable{color:var(--muted);font-size:10px;line-height:1.5}.roulette-spin{border-color:var(--night)!important;background:var(--night)!important;color:#fff!important}.roulette-card-wheel{width:70px;height:70px;aspect-ratio:1;border:4px solid #e9cf7e;border-radius:50%;background:conic-gradient(#187448 0deg 10deg,#b62f3b 10deg 20deg,#171a36 20deg 30deg,#b62f3b 30deg 40deg,#171a36 40deg 50deg,#b62f3b 50deg 60deg,#171a36 60deg 70deg,#b62f3b 70deg 80deg,#171a36 80deg 90deg,#b62f3b 90deg 100deg,#171a36 100deg 110deg,#b62f3b 110deg 120deg,#171a36 120deg 130deg,#b62f3b 130deg 140deg,#171a36 140deg 150deg,#b62f3b 150deg 160deg,#171a36 160deg 170deg,#b62f3b 170deg 180deg,#171a36 180deg 190deg,#b62f3b 190deg 200deg,#171a36 200deg 210deg,#b62f3b 210deg 220deg,#171a36 220deg 230deg,#b62f3b 230deg 240deg,#171a36 240deg 250deg,#b62f3b 250deg 260deg,#171a36 260deg 270deg,#b62f3b 270deg 280deg,#171a36 280deg 290deg,#b62f3b 290deg 300deg,#171a36 300deg 310deg,#b62f3b 310deg 320deg,#171a36 320deg 330deg,#b62f3b 330deg 340deg,#171a36 340deg 350deg,#187448 350deg 360deg);box-shadow:0 4px 0 rgba(23,26,54,.15)}.roulette-card-wheel span{display:none}@media(max-width:700px){.roulette-layout{grid-template-columns:1fr;max-width:440px}.roulette-wheel-shell{width:min(100%,340px)}.roulette-number{transform:rotate(var(--angle)) translateY(calc(-1 * (min(340px, 100vw) / 2 - 36px))) rotate(calc(-1 * var(--angle)))}}
 		@media(max-width:980px) and (min-width:600px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.skin-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:760px){.shell{width:min(calc(100% - 32px),580px)}.hero{padding-top:65px}.hero:after{right:1%;top:13%;font-size:65px}.hero-bottom{align-items:start;flex-direction:column}.status-strip{margin-bottom:43px}.game-grid{grid-template-columns:1fr;gap:12px}.game-card{min-height:245px}.preview{height:88px}.section-heading,.shop-intro{align-items:start;flex-direction:column}.games-section{padding-bottom:52px}.shop-section{padding:24px 0 52px}.skin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.play-panel{margin-bottom:52px}}@media(max-width:480px){.shell{width:calc(100% - 28px)}.topbar{height:66px}.top-links{gap:10px;font-size:11px}.free-pill{padding:6px 8px;font-size:9px}.brand{font-size:15px}.brand-mark{width:25px;height:25px}.wallet-strip{grid-template-columns:1fr;padding:14px}.wallet-identity{gap:10px}.profile-form{justify-content:flex-start;flex-wrap:wrap}.profile-form input{width:min(160px,45vw)}.economy-note{grid-column:auto}.status-strip{align-items:start;flex-direction:column}.status-note{text-align:left}.panel-head{gap:8px}.quiet-button{padding:0 8px;font-size:10px}.ttt-board{grid-template-columns:repeat(3,minmax(65px,82px))}.memory-board{grid-template-columns:repeat(4,minmax(48px,62px));gap:6px}.poker-seats{gap:4px}.poker-seat{padding:6px 3px}.playing-card{width:34px;height:52px;padding:3px;font-size:10px}.playing-card .suit{font-size:13px}.card-table{padding:12px 8px}.slot-machine{padding:13px}.slot-reel{min-height:68px}.footer{align-items:start;flex-direction:column;gap:5px}.skin-grid{gap:8px}.skin-card{padding:10px}.game-stage{padding-top:18px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-		/* The 12 spaces form a square perimeter; the shared penalty pot sits in its 2×2 center. */
-		.monopoly-board{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(4,minmax(105px,1fr))}
-		.monopoly-board-center{grid-column:2/4;grid-row:2/4;display:grid;align-content:center;justify-items:center;gap:8px;min-width:0;padding:12px;border:2px dashed #77aa85;border-radius:12px;background:linear-gradient(145deg,#e1f5e8,#c5e7d2);color:#24623b;text-align:center}
+		/* Forty squares run around the board's edge; the shared penalty pot sits in the open center. */
+		.monopoly-layout{grid-template-columns:minmax(155px,.65fr) minmax(0,2.5fr) minmax(165px,.7fr);align-items:start;gap:12px;width:min(100%,1240px)}
+		.monopoly-board-scroll{max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;padding:2px 0 7px}
+		.monopoly-board{width:100%;min-width:660px;aspect-ratio:1;grid-template-columns:repeat(11,minmax(0,1fr));grid-template-rows:repeat(11,minmax(0,1fr));gap:4px;padding:8px}
+		.monopoly-tile{min-width:0;min-height:0;aspect-ratio:1;padding:4px 3px;border-radius:4px;text-align:center;font-size:clamp(7px,.75vw,10px)}
+		.monopoly-tile .monopoly-name{font-size:clamp(7px,.75vw,10px);line-height:1.05;overflow-wrap:anywhere}
+		.monopoly-tile .monopoly-price{font-size:clamp(6px,.65vw,9px)}
+		.monopoly-tile .monopoly-owner{font-size:clamp(5px,.55vw,8px);overflow-wrap:anywhere}
+		.monopoly-tile.property .monopoly-bar{height:4px;flex:0 0 4px;border-radius:1px}
+		.monopoly-tile.owned{outline:2px solid var(--owner-color);outline-offset:-2px}
+		.monopoly-tile.railroad{background:linear-gradient(180deg,#f3f2ed,#dedbd0)}
+		.monopoly-tile.utility{background:linear-gradient(180deg,#e7f2f7,#cbdfea)}
+		.monopoly-tile.jail{background:linear-gradient(145deg,#ffe6bc,#f2c97f)}
+		.monopoly-tile.goToJail{background:linear-gradient(145deg,#f4c5b6,#df8b79)}
+		.monopoly-tokens{justify-content:center;gap:2px}
+		.monopoly-tokens span{width:12px;height:12px;font-size:6px}
+		.monopoly-board-center{grid-column:2/11;grid-row:2/11;display:grid;align-content:center;justify-items:center;gap:8px;min-width:0;padding:12px;border:2px dashed #77aa85;border-radius:12px;background:linear-gradient(145deg,#e1f5e8,#c5e7d2);color:#24623b;text-align:center}
 		.monopoly-board-center strong{font-size:clamp(11px,1.4vw,16px);letter-spacing:.08em}
 		.monopoly-board-center span{font-size:clamp(18px,2.4vw,27px);font-weight:950}
 		.monopoly-board-center small{font-size:9px}
@@ -92,10 +106,39 @@
 		@media(max-width:600px){.loan-section{grid-template-columns:1fr;gap:14px;padding:16px}.loan-summary{grid-column:auto}.loan-heading h2{font-size:20px}}
 		@media(max-width:480px){.top-links{gap:6px;font-size:10px}.free-pill{display:none}}
 	</style>
+	<style>
+		/* Motion pass: entrances, game pieces, controls, and rewards all respond to the same gentle motion language. */
+		@keyframes hall-enter{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+		@keyframes icon-bob{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-4px) rotate(3deg)}}
+		@keyframes status-pop{0%{transform:scale(.6) rotate(-16deg);opacity:0}70%{transform:scale(1.15) rotate(5deg)}100%{transform:scale(1);opacity:1}}
+		@keyframes dot-pulse{0%,100%{box-shadow:0 0 4px rgba(214,255,95,.5)}50%{box-shadow:0 0 12px rgba(214,255,95,.95)}}
+		@keyframes turn-pulse{0%,100%{box-shadow:0 0 0 2px var(--skin-a)}50%{box-shadow:0 0 0 4px rgba(115,133,255,.35)}}
+		@keyframes pot-glow{0%,100%{box-shadow:0 0 0 rgba(36,98,59,0)}50%{box-shadow:0 0 18px rgba(36,98,59,.22)}}
+		@keyframes tile-arrive{from{opacity:0;transform:translateY(10px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+		@keyframes token-pop{0%{opacity:0;transform:scale(.2)}70%{transform:scale(1.22)}100%{opacity:1;transform:scale(1)}}
+		.topbar,.loan-section,.footer{animation:hall-enter .55s both cubic-bezier(.2,.7,.2,1)}
+		.topbar{animation-delay:.02s}.loan-section{animation-delay:.12s}.footer{animation-delay:.18s}
+		.brand-mark{animation:icon-bob 3.2s ease-in-out infinite}
+		.free-pill:before{animation:dot-pulse 2.2s ease-in-out infinite}
+		.status-icon{animation:status-pop .42s both cubic-bezier(.2,.8,.2,1)}
+		.coin-icon{animation:icon-bob 3.8s ease-in-out infinite}
+		.skin-card{animation:hall-enter .42s both cubic-bezier(.2,.7,.2,1)}
+		.skin-card:nth-child(4n+1){animation-delay:.04s}.skin-card:nth-child(4n+2){animation-delay:.09s}.skin-card:nth-child(4n+3){animation-delay:.14s}.skin-card:nth-child(4n){animation-delay:.19s}
+		.game-actions{animation:hall-enter .3s .12s both}
+		.monopoly-tile{animation:tile-arrive .32s both cubic-bezier(.2,.75,.2,1)}
+		.monopoly-tile:nth-child(4n+1){animation-delay:.02s}.monopoly-tile:nth-child(4n+2){animation-delay:.06s}.monopoly-tile:nth-child(4n+3){animation-delay:.1s}.monopoly-tile:nth-child(4n){animation-delay:.14s}
+		.monopoly-tokens span{animation:token-pop .24s both cubic-bezier(.2,.8,.2,1)}
+		.monopoly-player.active{animation:turn-pulse 1.8s ease-in-out infinite}
+		.monopoly-board-center.has-money,.monopoly-pot-display.has-money{animation:pot-glow 1.8s ease-in-out infinite}
+		.monopoly-board-center.has-money span{animation:icon-bob 1.3s ease-in-out infinite}
+		@media(prefers-reduced-motion:reduce){
+			*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+		}
+	</style>
 	</head>
 <body>
 	<header class="shell topbar">
-		<a class="brand" href="#top" aria-label="Game Hall home"><span class="brand-mark" aria-hidden="true">G</span>GAME HALL</a>
+		<a class="brand" href="#top" aria-label="NOT CASINO home"><span class="brand-mark" aria-hidden="true">NC</span>NOT CASINO</a>
 		<nav class="top-links" aria-label="Main navigation"><span class="free-pill">Free to play</span><a href="#games">Games <span aria-hidden="true">↘</span></a><a href="#loans">Loan desk <span aria-hidden="true">↘</span></a><a href="#shop">Skin shop <span aria-hidden="true">↘</span></a></nav>
 	</header>
 	<main id="top" class="shell">
@@ -143,7 +186,7 @@
 		<!-- Skin shelf markup. renderShop() creates the skin cards and #skin-grid receives them. -->
 		<section class="shop-section" id="shop" aria-labelledby="shop-title"><div class="shop-intro"><div><p class="eyebrow">Personalize your play</p><h2 id="shop-title">The skin shelf<span class="accent">.</span></h2></div><p>Cosmetic-only themes for each game. Everyone starts with 0 NOT COIN and can earn points by playing. Every classic look is included. Shop items stay in this browser; coins cannot be bought or redeemed.</p></div><div class="skin-grid" id="skin-grid" aria-live="polite"></div><p class="shop-footnote">All NOT COIN is fictional and non-redeemable. Balances can go down to −300,000 virtual points. Optional loans charge interest and have an automatic overdue collection.</p></section>
 	</main>
-	<footer class="shell footer"><span><strong>GAME HALL</strong> — just the good part of game night.</span><span class="footer-mark">NO LOGIN · NO CASH VALUE · JUST GREAT GOOFY GAMES</span></footer>
+	<footer class="shell footer"><span><strong>NOT CASINO</strong> — just the good part of game night.</span><span class="footer-mark">NO LOGIN · NO CASH VALUE · JUST GREAT GOOFY GAMES</span></footer>
 	<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 	<script>
 	(() => {
@@ -260,23 +303,55 @@
 		document.querySelector('#restart-game').addEventListener('click',()=>{if(activeGame==='roulette'&&rouletteState?.spinning){notify('Let the wheel finish before restarting.');return}renderGame(true)});
 
 		// ==== Monopoly game state and rules ==== //
-		// startMonopoly() is the reset point. Each board item has a type/name/price/rent/owner;
-		// owner is null until purchased, then it stores a player ID (0 = human, 1–2 = bots).
+		// startMonopoly() is the reset point. The 40 entries below follow the standard Monopoly order;
+		// owner is null until a street, railroad, or utility is bought (0 = human, 1–2 = bots).
 		// Tax/fine amounts and the two small card decks are configured here; penalty payments go to monopoly.pot.
 		function startMonopoly(){
+			const property=(name,group,price,rent)=>({type:'property',name,group,price,rent,owner:null});
+			const special=(type,name,amount=0)=>({type,name,amount,price:0,rent:0,owner:null});
+			const railroad=name=>({type:'railroad',name,price:200,rent:25,owner:null});
+			const utility=name=>({type:'utility',name,price:150,rent:0,owner:null});
 			const board=[
 				{type:'start',name:'GO',price:0,rent:0,owner:null},
-				{type:'property',name:'Maple Lane',price:120,rent:18,owner:null},
-				{type:'chance',name:'Chance',price:0,rent:0,owner:null},
-				{type:'property',name:'Cedar Row',price:140,rent:22,owner:null},
-				{type:'tax',name:'Income Tax',amount:100,price:0,rent:0,owner:null},
-				{type:'freeParking',name:'Free Parking',price:0,rent:0,owner:null},
-				{type:'property',name:'Town Square',price:160,rent:28,owner:null},
-				{type:'communityChest',name:'Community Chest',price:0,rent:0,owner:null},
-				{type:'property',name:'Harbor Point',price:200,rent:36,owner:null},
-				{type:'fine',name:'Speeding Fine',amount:50,price:0,rent:0,owner:null},
-				{type:'property',name:'Silver Avenue',price:220,rent:42,owner:null},
-				{type:'property',name:'Oak Terrace',price:260,rent:50,owner:null}
+				property('Mediterranean Avenue','brown',60,2),
+				special('communityChest','Community Chest'),
+				property('Baltic Avenue','brown',60,4),
+				special('tax','Income Tax',200),
+				railroad('Reading Railroad'),
+				property('Oriental Avenue','lightBlue',100,6),
+				special('chance','Chance'),
+				property('Vermont Avenue','lightBlue',100,6),
+				property('Connecticut Avenue','lightBlue',120,8),
+				special('jail','Jail / Just Visiting'),
+				property('St. Charles Place','pink',140,10),
+				utility('Electric Company'),
+				property('States Avenue','pink',140,10),
+				property('Virginia Avenue','pink',160,12),
+				railroad('Pennsylvania Railroad'),
+				property('St. James Place','orange',180,14),
+				special('communityChest','Community Chest'),
+				property('Tennessee Avenue','orange',180,14),
+				property('New York Avenue','orange',200,16),
+				special('freeParking','Free Parking'),
+				property('Kentucky Avenue','red',220,18),
+				special('chance','Chance'),
+				property('Indiana Avenue','red',220,18),
+				property('Illinois Avenue','red',240,20),
+				railroad('B. & O. Railroad'),
+				property('Atlantic Avenue','yellow',260,22),
+				property('Ventnor Avenue','yellow',260,22),
+				utility('Water Works'),
+				property('Marvin Gardens','yellow',280,24),
+				special('goToJail','Go to Jail'),
+				property('Pacific Avenue','green',300,26),
+				property('North Carolina Avenue','green',300,26),
+				special('communityChest','Community Chest'),
+				property('Pennsylvania Avenue','green',320,28),
+				railroad('Short Line'),
+				special('chance','Chance'),
+				property('Park Place','darkBlue',350,35),
+				special('tax','Luxury Tax',100),
+				property('Boardwalk','darkBlue',400,50)
 			];
 			monopoly={
 				board,
@@ -344,7 +419,7 @@
 			if(passedGo)player.money+=200;
 			const tile=monopoly.board[player.position];
 			let message=`${player.name} rolled ${rolled} and landed on ${tile.name}.${passedGo?' Collected $200 for passing GO.':''}`;
-			if(tile.type==='property'){
+			if(tile.type==='property'||tile.type==='railroad'||tile.type==='utility'){
 				if(tile.owner===null){
 					if(playerIndex===0){
 						monopoly.phase='buy';
@@ -361,7 +436,18 @@
 					}else message+=` ${player.name} passed on buying it.`;
 				}else if(tile.owner!==playerIndex){
 					const owner=monopoly.players[tile.owner];
-					const paid=Math.min(player.money,tile.rent);
+					let rent=tile.rent;
+					if(tile.type==='property'){
+						const groupTiles=monopoly.board.filter(space=>space.type==='property'&&space.group===tile.group);
+						if(groupTiles.every(space=>space.owner===tile.owner))rent*=2;
+					}else if(tile.type==='railroad'){
+						const railroadCount=monopoly.board.filter(space=>space.type==='railroad'&&space.owner===tile.owner).length;
+						rent*=2**(railroadCount-1);
+					}else{
+						const utilityCount=monopoly.board.filter(space=>space.type==='utility'&&space.owner===tile.owner).length;
+						rent=rolled*(utilityCount===2?10:4);
+					}
+					const paid=Math.min(player.money,rent);
 					player.money-=paid;
 					owner.money+=paid;
 					message+=player.money===0?` ${player.name} went bankrupt paying $${paid} rent to ${owner.name}.`:` ${player.name} paid $${paid} rent to ${owner.name}.`;
@@ -379,6 +465,9 @@
 				player.money+=collected;
 				monopoly.pot=0;
 				message+=collected?` ${player.name} collected the $${collected} Free Parking pot.`:' The Free Parking pot is empty.';
+			}else if(tile.type==='goToJail'){
+				player.position=10;
+				message+=` ${player.name} was sent to Jail.`;
 			}
 			if(player.money<=0){
 				player.money=0;
@@ -427,8 +516,8 @@
 			}
 			if(action==='buy' && monopoly.phase==='buy'){
 				const target=monopoly.board[player.position];
-				if(!target||target.type!=='property'||target.owner!==null||player.money<target.price){
-					monopoly.message='You cannot afford that property right now.';
+				if(!target||!['property','railroad','utility'].includes(target.type)||target.owner!==null||player.money<target.price){
+					monopoly.message='You cannot afford that space right now.';
 					setStatus(monopoly.message);
 					return renderMonopoly(false);
 				}
@@ -447,23 +536,30 @@
 		function renderMonopoly(reset){
 			if(reset||!monopoly)startMonopoly();
 			const current=monopoly.players[monopoly.turn];
-			const tileColorMap=['#7385ff','#f59e0b','#34d399'];
-			const boardSlots=[[1,1],[2,1],[3,1],[4,1],[4,2],[4,3],[4,4],[3,4],[2,4],[1,4],[1,3],[1,2]];
-			stage.innerHTML=`<div class="monopoly-layout"><div class="monopoly-side"><h3>Players</h3><div class="monopoly-player-list">${monopoly.players.map(player=>`<div class="monopoly-player ${monopoly.turn===player.id?'active':''}" data-player="${player.id}"><span class="monopoly-token">${player.token}</span><span>${player.name}</span><strong>$${player.money}</strong></div>`).join('')}</div></div><div class="monopoly-board">${monopoly.board.map((tile,index)=>{
+			const groupColors={brown:'#8c5734',lightBlue:'#87c5dc',pink:'#cc75ad',orange:'#e88936',red:'#d34d48',yellow:'#e9c94f',green:'#44945a',darkBlue:'#3860a8'};
+			// Map each space to one of the 40 cells around an 11-by-11 CSS grid.
+			const boardSlots=monopoly.board.map((_,index)=>{
+				if(index<=10)return [11-index,11];
+				if(index<=20)return [1,21-index];
+				if(index<=30)return [index-19,1];
+				return [11,index-29];
+			});
+			stage.innerHTML=`<div class="monopoly-layout"><div class="monopoly-side"><h3>Players</h3><div class="monopoly-player-list">${monopoly.players.map(player=>`<div class="monopoly-player ${monopoly.turn===player.id?'active':''}" data-player="${player.id}"><span class="monopoly-token">${player.token}</span><span>${player.name}</span><strong>$${player.money}</strong></div>`).join('')}</div></div><div class="monopoly-board-scroll"><div class="monopoly-board">${monopoly.board.map((tile,index)=>{
 				const ownerName = tile.owner !== null ? monopoly.players[tile.owner].name : 'Open';
-				const tileClass = tile.type === 'property' ? 'property' : tile.type;
-				const tileColor = tile.type === 'property' && tile.owner !== null ? tileColorMap[tile.owner] : '#7385ff';
+				const tileClass=tile.type==='property'?`property group-${tile.group}`:tile.type;
+				const tileColor=tile.type==='property'?groupColors[tile.group]:'#7385ff';
+				const ownerColor=tile.owner===null?'transparent':['#7385ff','#f59e0b','#34d399'][tile.owner];
 				const [gridColumn,gridRow]=boardSlots[index];
-				const tilePrice = tile.type==='property'?`$${tile.price}`:tile.type==='tax'||tile.type==='fine'?`Pay $${tile.amount}`:tile.type==='chance'||tile.type==='communityChest'?'Draw a card':'';
-				const tileDetail = tile.type==='property'?(tile.owner===null?'Available':`Owner: ${ownerName}`):tile.type==='start'?'Collect $200 when passing':tile.type==='freeParking'?`Pot: $${monopoly.pot}`:tile.type==='tax'||tile.type==='fine'?'Payment adds to pot':'';
-				return `<div class="monopoly-tile ${tileClass}" style="--tile-color:${tileColor};grid-column:${gridColumn};grid-row:${gridRow};">
+				const tilePrice=tile.type==='property'||tile.type==='railroad'||tile.type==='utility'?`$${tile.price}`:tile.type==='tax'?`Pay $${tile.amount}`:tile.type==='chance'||tile.type==='communityChest'?'Draw a card':'';
+				const tileDetail=tile.type==='property'||tile.type==='railroad'||tile.type==='utility'?(tile.owner===null?'Available':`Owner: ${ownerName}`):tile.type==='start'?'Collect $200 when passing':tile.type==='freeParking'?`Pot: $${monopoly.pot}`:tile.type==='jail'?'Just Visiting':tile.type==='goToJail'?'Go directly to Jail':tile.type==='tax'?'Payment adds to pot':'';
+				return `<div class="monopoly-tile ${tileClass}${tile.owner!==null?' owned':''}" style="--tile-color:${tileColor};--owner-color:${ownerColor};grid-column:${gridColumn};grid-row:${gridRow};">
 					${tile.type==='property'?'<div class="monopoly-bar"></div>':''}
 					<div class="monopoly-name">${tile.name}</div>
 					<div class="monopoly-price">${tilePrice}</div>
 					<div class="monopoly-owner">${tileDetail}</div>
 					<div class="monopoly-tokens">${monopoly.players.filter(player=>player.position===index).map(player=>`<span data-player="${player.id}">${player.token}</span>`).join('')}</div>
 				</div>`;
-			}).join('')}<div class="monopoly-board-center"><strong>FREE PARKING</strong><span>$${monopoly.pot}</span><small>Taxes, fines &amp; card penalties</small></div></div><div class="monopoly-controls"><h3>Board state</h3><div class="game-wallet">${current?`${current.name}'s turn`:'Board ready'} · Player cash $${monopoly.players.reduce((sum,player)=>sum+player.money,0)}</div><div class="monopoly-pot-display" aria-live="polite">Free Parking pot · $${monopoly.pot}</div>${monopoly.turn===0?`<div class="round-controls"><button class="action-button" type="button" data-monopoly="roll">Roll dice</button>${monopoly.phase==='buy'?'<button class="action-button secondary" type="button" data-monopoly="buy">Buy property</button><button class="action-button secondary" type="button" data-monopoly="skip">Skip</button>':''}</div>`:'<p class="monopoly-status">Bots are moving…</p>'}${monopoly.lastEvent&&monopoly.lastEvent!==monopoly.message?`<p class="monopoly-status">${monopoly.lastEvent}</p>`:''}<p class="monopoly-status">${monopoly.message}</p></div></div>`;
+			}).join('')}<div class="monopoly-board-center${monopoly.pot?' has-money':''}"><strong>FREE PARKING</strong><span>$${monopoly.pot}</span><small>Taxes, fines &amp; card penalties go here</small><small>40 spaces · 22 streets · 4 railroads · 2 utilities</small></div></div></div><div class="monopoly-controls"><h3>Board state</h3><div class="game-wallet">${current?`${current.name}'s turn`:'Board ready'} · Player cash $${monopoly.players.reduce((sum,player)=>sum+player.money,0)}</div><div class="monopoly-pot-display${monopoly.pot?' has-money':''}" aria-live="polite">Free Parking pot · $${monopoly.pot}</div>${monopoly.turn===0?`<div class="round-controls"><button class="action-button" type="button" data-monopoly="roll">Roll dice</button>${monopoly.phase==='buy'?'<button class="action-button secondary" type="button" data-monopoly="buy">Buy space</button><button class="action-button secondary" type="button" data-monopoly="skip">Skip</button>':''}</div>`:'<p class="monopoly-status">Bots are moving…</p>'}${monopoly.lastEvent&&monopoly.lastEvent!==monopoly.message?`<p class="monopoly-status">${monopoly.lastEvent}</p>`:''}<p class="monopoly-status">${monopoly.message}</p></div></div>`;
 			stage.querySelectorAll('[data-monopoly]').forEach(button=>button.addEventListener('click',()=>monopolyAction(button.dataset.monopoly)));
 			if(monopoly.turn!==0 && !monopoly.winner && monopoly.phase==='ready' && activeGame==='monopoly'){setStatus(monopoly.message);}
 		}
