@@ -26,6 +26,7 @@
 		/* Forty squares run around the board's edge; the shared penalty pot sits in the open center. */
 		.monopoly-layout{grid-template-columns:minmax(155px,.65fr) minmax(0,2.5fr) minmax(165px,.7fr);align-items:start;gap:12px;width:min(100%,1240px)}
 		.monopoly-board-scroll{max-width:100%;min-width:0;overflow-x:auto;overscroll-behavior-x:contain;padding:2px 0 7px}
+		.monopoly-board-scroll:focus-visible{outline:3px solid #dfc37e;outline-offset:3px}
 		.monopoly-board{width:100%;min-width:660px;aspect-ratio:1;grid-template-columns:repeat(11,minmax(0,1fr));grid-template-rows:repeat(11,minmax(0,1fr));gap:4px;padding:8px}
 		.monopoly-tile{min-width:0;min-height:0;aspect-ratio:1;padding:4px 3px;border-radius:4px;text-align:center;font-size:clamp(7px,.75vw,10px)}
 		.monopoly-tile .monopoly-name{font-size:clamp(7px,.75vw,10px);line-height:1.05;overflow-wrap:anywhere}
@@ -544,7 +545,7 @@
 				if(index<=30)return [index-19,1];
 				return [11,index-29];
 			});
-			stage.innerHTML=`<div class="monopoly-layout"><div class="monopoly-side"><h3>Players</h3><div class="monopoly-player-list">${monopoly.players.map(player=>`<div class="monopoly-player ${monopoly.turn===player.id?'active':''}" data-player="${player.id}"><span class="monopoly-token">${player.token}</span><span>${player.name}</span><strong>$${player.money}</strong></div>`).join('')}</div></div><div class="monopoly-board-scroll"><div class="monopoly-board">${monopoly.board.map((tile,index)=>{
+			stage.innerHTML=`<div class="monopoly-layout"><div class="monopoly-side"><h3>Players</h3><div class="monopoly-player-list">${monopoly.players.map(player=>`<div class="monopoly-player ${monopoly.turn===player.id?'active':''}" data-player="${player.id}"><span class="monopoly-token">${player.token}</span><span>${player.name}</span><strong>$${player.money}</strong></div>`).join('')}</div></div><div class="monopoly-board-scroll" role="region" aria-label="Monopoly board with 40 spaces; scroll horizontally to view all spaces" tabindex="0"><div class="monopoly-board">${monopoly.board.map((tile,index)=>{
 				const ownerName = tile.owner !== null ? monopoly.players[tile.owner].name : 'Open';
 				const tileClass=tile.type==='property'?`property group-${tile.group}`:tile.type;
 				const tileColor=tile.type==='property'?groupColors[tile.group]:'#7385ff';
