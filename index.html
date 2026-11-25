@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#17130f">
-	<meta name="description" content="A private collection of eleven free games and cosmetic rewards by NOT CASINO.">
+		<meta name="description" content="A private collection of free games and cosmetic rewards by NOT CASINO.">
 	<title>NOT CASINO</title>
 	<!-- ==== Page shell and visual styling ==== -->
 	<!-- CSS notes: :root contains shared color/font variables; selectors beginning with "." target class names in the HTML.
@@ -45,6 +45,14 @@
 		.monopoly-board-center span{font-size:clamp(18px,2.4vw,27px);font-weight:950}
 		.monopoly-board-center small{font-size:9px}
 		@media(max-width:850px){.monopoly-layout{grid-template-columns:1fr;width:min(100%,560px)}}
+		.fruit-game{width:min(100%,410px);padding:14px;border:1px solid rgba(23,26,54,.12);border-radius:16px;background:linear-gradient(145deg,#fff8e9,#f1f3ff);box-shadow:0 14px 34px rgba(23,26,54,.12)}
+		.fruit-hud{display:flex;justify-content:space-between;gap:8px;margin-bottom:10px}
+		.fruit-stat{flex:1;padding:7px 10px;border-radius:9px;background:#242747;color:#d9dcf0;font-size:9px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+		.fruit-stat strong{display:block;color:#d6ff5f;font-size:19px;letter-spacing:-.04em}
+		.fruit-next{display:flex;align-items:center;gap:7px;justify-content:center;margin:0 auto 8px;color:#62647b;font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.08em}
+		.fruit-next strong{font-size:24px}
+		.fruit-canvas{display:block;width:min(100%,360px);height:auto;margin:auto;border:4px solid #3d4269;border-radius:12px;background:linear-gradient(#dfe7ff,#f4efff);touch-action:none;cursor:crosshair}
+		.fruit-hint{margin:9px 2px 0;color:#62647b;font-size:10px;text-align:center}
 	</style>
 	<!-- Theme polish and additional game styling. Later CSS rules win when the same selector appears earlier. -->
 	<style>
@@ -136,6 +144,42 @@
 			*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 		}
 	</style>
+	<style>
+		/* Original cricket visuals: a compact local pitch and a timed ball flight. */
+		.cricket-preview{position:relative;width:166px;height:78px;overflow:hidden;border:4px solid #855b36;border-radius:7px;background:linear-gradient(#c9e6ef 0 42%,#6ba871 42%);box-shadow:0 6px 0 rgba(23,26,54,.14)}
+		.cricket-preview:before{content:"";position:absolute;left:37%;right:37%;bottom:0;height:42%;background:#c9b188}
+		.cricket-preview-score{position:absolute;top:6px;left:8px;z-index:1;padding:2px 6px;border-radius:4px;background:#fffdf6;color:#242747;font-size:11px;font-weight:950}
+		.cricket-preview-bat{position:absolute;right:26px;bottom:15px;z-index:1;width:5px;height:33px;border-radius:3px;background:#865b32;transform:rotate(32deg)}
+		.cricket-preview-ball{position:absolute;left:24px;bottom:23px;z-index:1;width:9px;height:9px;border-radius:50%;background:#d54c46;animation:cricket-preview-flight 1.4s ease-in-out infinite alternate}
+		.cricket-preview-stumps{position:absolute;right:18px;bottom:7px;z-index:1;width:3px;height:16px;background:#fff8e9;box-shadow:5px 0 #fff8e9,10px 0 #fff8e9}
+		@keyframes cricket-preview-flight{to{transform:translate(78px,-8px)}}
+		.cricket-game{display:grid;gap:11px;width:min(100%,520px)}
+		.cricket-dashboard{padding:12px;border:1px solid rgba(23,26,54,.12);border-radius:10px;background:linear-gradient(145deg,#fffdf6,#edf3e6)}
+		.cricket-score-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;color:#426247;font-size:9px;font-weight:950;letter-spacing:.1em;text-transform:uppercase}
+		.cricket-score-head strong{color:#202b22;font-size:12px;letter-spacing:0}
+		.cricket-score-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+		.cricket-stat{padding:7px 9px;border-radius:6px;background:#234b35;color:#e3efd9;font-size:9px;font-weight:850;text-transform:uppercase}
+		.cricket-stat strong{display:block;color:#fff4bf;font-size:19px;line-height:1.15}
+		.cricket-pitch{position:relative;width:100%;aspect-ratio:2/1;min-height:180px;overflow:hidden;border:2px solid #426e43;border-radius:10px;background:linear-gradient(#cbe7ed 0 38%,#77b273 38% 100%);box-shadow:inset 0 -12px 0 rgba(34,84,48,.12),0 6px 15px rgba(34,65,41,.16)}
+		.cricket-pitch:before{content:"";position:absolute;left:35%;right:35%;top:43%;height:48%;border-radius:48% 48% 0 0;background:linear-gradient(90deg,#bd9a68,#e2c99a 50%,#bd9a68);box-shadow:inset 0 0 0 1px rgba(92,64,33,.2)}
+		.cricket-pitch:after{content:"";position:absolute;left:46%;top:46%;width:8%;height:42%;border-top:2px solid rgba(255,255,255,.7);border-bottom:2px solid rgba(255,255,255,.7)}
+		.cricket-bowler,.cricket-batter{position:absolute;z-index:2;top:57%;display:grid;justify-items:center;gap:3px;transform:translateY(-50%);color:#1f3a29;font-size:9px;font-weight:950;letter-spacing:.08em}
+		.cricket-bowler{left:9%}.cricket-batter{right:10%}
+		.cricket-avatar{display:grid;place-items:center;width:34px;height:34px;border:2px solid rgba(255,255,255,.8);border-radius:50%;background:#315c45;color:white;font-size:9px;box-shadow:0 2px 4px rgba(0,0,0,.2)}
+		.cricket-batter .cricket-avatar{background:#a65a39}
+		.cricket-stumps{position:absolute;z-index:2;right:15%;bottom:20%;display:flex;gap:3px;height:28px;align-items:end}
+		.cricket-stumps i{width:3px;height:25px;border-radius:2px;background:#fff8e9;box-shadow:0 1px 2px rgba(0,0,0,.22)}
+		.cricket-bail{position:absolute;right:calc(15% - 1px);bottom:calc(20% + 27px);z-index:2;width:11px;height:3px;border-radius:2px;background:#fff8e9}
+		.cricket-ball{position:absolute;z-index:3;left:16%;top:57%;width:13px;height:13px;border:2px solid #fff4e8;border-radius:50%;background:#bd3439;box-shadow:0 2px 4px rgba(0,0,0,.28);opacity:0}
+		.cricket-pitch.is-delivery .cricket-ball{opacity:1;animation:cricket-ball-flight 1.05s cubic-bezier(.15,.55,.3,1) both}
+		@keyframes cricket-ball-flight{0%{left:16%;top:55%;transform:scale(.72)}55%{top:68%;transform:scale(1)}100%{left:77%;top:58%;transform:scale(.82)}}
+		.cricket-callout{position:absolute;z-index:4;left:50%;top:13%;max-width:80%;padding:5px 9px;border-radius:999px;background:rgba(255,253,246,.9);color:#244631;font-size:10px;font-weight:900;text-align:center;transform:translateX(-50%)}
+		.cricket-controls{display:flex;justify-content:center;gap:8px}
+		.cricket-controls .action-button{min-width:132px}
+		.cricket-hint{margin:0;color:#62647b;font-size:10px;text-align:center}
+		.cricket-pitch.is-delivery .cricket-callout{background:#fff4bf;animation:soft-pop .2s both}
+		@media(max-width:480px){.cricket-pitch{min-height:155px}.cricket-controls .action-button{min-width:0;flex:1;padding:0 8px}.cricket-score-head{font-size:8px}.cricket-stat{padding:7px 5px}}
+	</style>
 	</head>
 <body>
 	<header class="shell topbar">
@@ -160,23 +204,25 @@
 			<form class="loan-form" id="loan-form"><label for="loan-amount">Loan amount · 100–100,000 NOT COIN</label><input id="loan-amount" type="number" min="100" max="100000" step="100" value="1000" required><button type="submit" id="loan-submit">Take loan</button></form>
 			<p class="loan-summary" id="loan-summary" aria-live="polite"></p>
 		</section>
-		<aside class="status-strip" aria-label="Game hall status"><div class="status-left"><span class="status-icon" aria-hidden="true">✓</span><span><strong>Doors are open.</strong> Your next game is one tap away.</span></div><span class="status-note">12 games ready · No sign-in · Cosmetic shop</span></aside>
+		<aside class="status-strip" aria-label="Game hall status"><div class="status-left"><span class="status-icon" aria-hidden="true">✓</span><span><strong>Doors are open.</strong> Your next game is one tap away.</span></div><span class="status-note">14 games ready · No sign-in · Cosmetic shop</span></aside>
 		<!-- Game shelf: each data-game value must match a key in gameInfo and an entry in renderGame(). -->
 		<section class="games-section" id="games" aria-labelledby="games-title">
 			<div class="section-heading"><div><p class="eyebrow">Choose your next obsession</p><h2 id="games-title">The game shelf<span class="accent">.</span></h2></div><p>Play for fun</p></div>
 			<div class="game-grid">
-				<article class="game-card"><div class="card-top"><span>Quick match</span><span class="game-number">01 / 11</span></div><div class="preview" aria-hidden="true"><div class="ttt-preview"><i>×</i><i>○</i><i></i><i></i><i>×</i><i></i><i>○</i><i></i><i></i></div></div><div class="card-copy"><h3>Tic-Tac-Toe</h3><p>Three in a row. Can you outsmart the little bot?</p><button class="play-card" type="button" data-game="ttt"><span>Play Tic-Tac-Toe</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>Brain break</span><span class="game-number">02 / 11</span></div><div class="preview" aria-hidden="true"><div class="memory-preview"><i>✦</i><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i><i>✦</i><i>?</i></div></div><div class="card-copy"><h3>Memory Match</h3><p>Flip the cards, find eight pairs, earn a move-based bonus.</p><button class="play-card" type="button" data-game="memory"><span>Play Memory Match</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>Keep it rolling</span><span class="game-number">03 / 11</span></div><div class="preview" aria-hidden="true"><div class="tile-preview"><i></i><i></i><i></i><i></i><i></i><i>2</i><i>4</i><i></i><i></i><i></i><i>8</i><i></i><i></i><i>2</i><i></i><i></i></div></div><div class="card-copy"><h3>2048</h3><p>Slide, stack, merge. Earn a little for each clever merge.</p><button class="play-card" type="button" data-game="2048"><span>Play 2048</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>Bot table</span><span class="game-number">04 / 11</span></div><div class="preview" aria-hidden="true"><div class="poker-preview"><span class="mini-card red">A♥</span><span class="mini-card">K♠</span><span class="mini-card red">Q♦</span></div></div><div class="card-copy"><h3>Poker</h3><p>Texas Hold’em against two bots. Optional fictional coin entry.</p><button class="play-card" type="button" data-game="poker"><span>Play Poker</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>Reel fun</span><span class="game-number">05 / 11</span></div><div class="preview" aria-hidden="true"><div class="slots-preview"><i>🍋</i><i>★</i><i>🍒</i></div></div><div class="card-copy"><h3>Slots</h3><p>A small pretend-coin spin; play free in practice mode anytime.</p><button class="play-card" type="button" data-game="slots"><span>Play Slots</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>Beat the dealer bot</span><span class="game-number">06 / 11</span></div><div class="preview" aria-hidden="true"><div class="blackjack-preview"><span class="mini-card red">A♥</span><span class="mini-card">♠7</span></div></div><div class="card-copy"><h3>Blackjack</h3><p>Hit or stand. Pick a tiny virtual stake or play a free hand.</p><button class="play-card" type="button" data-game="blackjack"><span>Play Blackjack</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>Keyboard + touch</span><span class="game-number">07 / 12</span></div><div class="preview" aria-hidden="true"><div class="tetris-preview"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-copy"><h3>Tetris</h3><p>Rotate, stack, clear lines. Your score earns cosmetic-shop coins.</p><button class="play-card" type="button" data-game="tetris"><span>Play Tetris</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>Bot board</span><span class="game-number">08 / 12</span></div><div class="preview" aria-hidden="true"><div class="monopoly-preview"><span>GO</span><span>🏠</span><span>🚂</span><span>💼</span></div></div><div class="card-copy"><h3>Monopoly</h3><p>Buy properties, collect rent, and beat the two bots around the board.</p><button class="play-card" type="button" data-game="monopoly"><span>Play Monopoly</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>Bot challenge</span><span class="game-number">09 / 12</span></div><div class="preview" aria-hidden="true"><div class="connect4-preview"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-copy"><h3>Connect Four</h3><p>Drop discs, line up four, and try to outplay the bot.</p><button class="play-card" type="button" data-game="connect4"><span>Play Connect Four</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>Minefield logic</span><span class="game-number">10 / 12</span></div><div class="preview" aria-hidden="true"><div class="connect4-preview"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-copy"><h3>Minesweeper</h3><p>Clear safe tiles, flag suspicious squares, and beat the board.</p><button class="play-card" type="button" data-game="minesweeper"><span>Play Minesweeper</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>European wheel · free play</span><span class="game-number">11 / 12</span></div><div class="preview" aria-hidden="true"><div class="roulette-card-wheel"><span>0</span><span>32</span><span>15</span><span>19</span><span>4</span><span>21</span><span>2</span><span>25</span><span>17</span><span>34</span><span>6</span><span>27</span></div></div><div class="card-copy"><h3>Roulette</h3><p>Spin a single-zero wheel and pick a pretend-point bet.</p><button class="play-card" type="button" data-game="roulette"><span>Play Roulette</span><span aria-hidden="true">↗</span></button></div></article>
-				<article class="game-card"><div class="card-top"><span>Classic strategy</span><span class="game-number">12 / 12</span></div><div class="preview" aria-hidden="true"><div class="chess-preview">♜ ♞ ♝ ♛</div></div><div class="card-copy"><h3>Chess</h3><p>Play as White against a computer opponent. Checkmate the king.</p><button class="play-card" type="button" data-game="chess"><span>Play Chess</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Quick match</span><span class="game-number">01 / 14</span></div><div class="preview" aria-hidden="true"><div class="ttt-preview"><i>×</i><i>○</i><i></i><i></i><i>×</i><i></i><i>○</i><i></i><i></i></div></div><div class="card-copy"><h3>Tic-Tac-Toe</h3><p>Three in a row. Can you outsmart the little bot?</p><button class="play-card" type="button" data-game="ttt"><span>Play Tic-Tac-Toe</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Brain break</span><span class="game-number">02 / 14</span></div><div class="preview" aria-hidden="true"><div class="memory-preview"><i>✦</i><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i><i>✦</i><i>?</i></div></div><div class="card-copy"><h3>Memory Match</h3><p>Flip the cards, find eight pairs, earn a move-based bonus.</p><button class="play-card" type="button" data-game="memory"><span>Play Memory Match</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Keep it rolling</span><span class="game-number">03 / 14</span></div><div class="preview" aria-hidden="true"><div class="tile-preview"><i></i><i></i><i></i><i></i><i></i><i>2</i><i>4</i><i></i><i></i><i></i><i>8</i><i></i><i></i><i>2</i><i></i><i></i></div></div><div class="card-copy"><h3>2048</h3><p>Slide, stack, merge. Earn a little for each clever merge.</p><button class="play-card" type="button" data-game="2048"><span>Play 2048</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Bot table</span><span class="game-number">04 / 14</span></div><div class="preview" aria-hidden="true"><div class="poker-preview"><span class="mini-card red">A♥</span><span class="mini-card">K♠</span><span class="mini-card red">Q♦</span></div></div><div class="card-copy"><h3>Poker</h3><p>Texas Hold’em against two bots. Optional fictional coin entry.</p><button class="play-card" type="button" data-game="poker"><span>Play Poker</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Reel fun</span><span class="game-number">05 / 14</span></div><div class="preview" aria-hidden="true"><div class="slots-preview"><i>🍋</i><i>★</i><i>🍒</i></div></div><div class="card-copy"><h3>Slots</h3><p>A small pretend-coin spin; play free in practice mode anytime.</p><button class="play-card" type="button" data-game="slots"><span>Play Slots</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Beat the dealer bot</span><span class="game-number">06 / 14</span></div><div class="preview" aria-hidden="true"><div class="blackjack-preview"><span class="mini-card red">A♥</span><span class="mini-card">♠7</span></div></div><div class="card-copy"><h3>Blackjack</h3><p>Hit or stand. Pick a tiny virtual stake or play a free hand.</p><button class="play-card" type="button" data-game="blackjack"><span>Play Blackjack</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Keyboard + touch</span><span class="game-number">07 / 14</span></div><div class="preview" aria-hidden="true"><div class="tetris-preview"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-copy"><h3>Tetris</h3><p>Rotate, stack, clear lines. Your score earns cosmetic-shop coins.</p><button class="play-card" type="button" data-game="tetris"><span>Play Tetris</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Bot board</span><span class="game-number">08 / 14</span></div><div class="preview" aria-hidden="true"><div class="monopoly-preview"><span>GO</span><span>🏠</span><span>🚂</span><span>💼</span></div></div><div class="card-copy"><h3>Monopoly</h3><p>Buy properties, collect rent, and beat the two bots around the board.</p><button class="play-card" type="button" data-game="monopoly"><span>Play Monopoly</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Bot challenge</span><span class="game-number">09 / 14</span></div><div class="preview" aria-hidden="true"><div class="connect4-preview"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-copy"><h3>Connect Four</h3><p>Drop discs, line up four, and try to outplay the bot.</p><button class="play-card" type="button" data-game="connect4"><span>Play Connect Four</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Minefield logic</span><span class="game-number">10 / 14</span></div><div class="preview" aria-hidden="true"><div class="connect4-preview"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="card-copy"><h3>Minesweeper</h3><p>Clear safe tiles, flag suspicious squares, and beat the board.</p><button class="play-card" type="button" data-game="minesweeper"><span>Play Minesweeper</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>European wheel · free play</span><span class="game-number">11 / 14</span></div><div class="preview" aria-hidden="true"><div class="roulette-card-wheel"><span>0</span><span>32</span><span>15</span><span>19</span><span>4</span><span>21</span><span>2</span><span>25</span><span>17</span><span>34</span><span>6</span><span>27</span></div></div><div class="card-copy"><h3>Roulette</h3><p>Spin a single-zero wheel and pick a pretend-point bet.</p><button class="play-card" type="button" data-game="roulette"><span>Play Roulette</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Classic strategy</span><span class="game-number">12 / 14</span></div><div class="preview" aria-hidden="true"><div class="chess-preview">♜ ♞ ♝ ♛</div></div><div class="card-copy"><h3>Chess</h3><p>Play as White against a computer opponent. Checkmate the king.</p><button class="play-card" type="button" data-game="chess"><span>Play Chess</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Fruit frenzy</span><span class="game-number">13 / 14</span></div><div class="preview" aria-hidden="true"><div class="chess-preview">🍒 🍊 🍉</div></div><div class="card-copy"><h3>Fruit Drop</h3><p>Drop matching fruit, build bigger combos, and keep the basket clear.</p><button class="play-card" type="button" data-game="fruit"><span>Play Fruit Drop</span><span aria-hidden="true">↗</span></button></div></article>
+				<article class="game-card"><div class="card-top"><span>Timing challenge</span><span class="game-number">14 / 14</span></div><div class="preview" aria-hidden="true"><div class="cricket-preview"><span class="cricket-preview-score">18</span><span class="cricket-preview-bat"></span><span class="cricket-preview-ball"></span><span class="cricket-preview-stumps"></span></div></div><div class="card-copy"><h3>Cricket</h3><p>Time your swings and chase the bot’s score in six balls.</p><button class="play-card" type="button" data-game="cricket"><span>Play Cricket</span><span aria-hidden="true">↗</span></button></div></article>
 			</div>
 		</section>
 		<!-- Shared play panel. Games render their changing board inside #game-stage; status and restart are shared. -->
@@ -214,7 +260,7 @@
 		// Each skin is a cosmetic theme; each game has a title and the instructions shown in the play panel.
 		// To add a skin, add its ID to DEFAULT_SKINS (if free for everyone) and add a full object to skins.
 		// The object's game value must match the game key; a-* and b-* are its two theme colors.
-		const DEFAULT_SKINS = ['ttt-classic','memory-classic','2048-classic','poker-classic','slots-classic','blackjack-classic','tetris-classic','monopoly-classic','connect4-classic','minesweeper-classic','roulette-classic','chess-classic'];
+		const DEFAULT_SKINS = ['ttt-classic','memory-classic','2048-classic','poker-classic','slots-classic','blackjack-classic','tetris-classic','monopoly-classic','connect4-classic','minesweeper-classic','roulette-classic','chess-classic','fruit-classic','cricket-classic'];
 		const skins = [
 			{ id:'ttt-classic',game:'ttt',gameName:'Tic-Tac-Toe',name:'Notebook',price:0,a:'#7385ff',b:'#ff725e',description:'The original clean board.' },{ id:'ttt-neon',game:'ttt',gameName:'Tic-Tac-Toe',name:'Neon garden',price:20000,a:'#13b8a6',b:'#f2c94c',description:'Mint marks with sunny highlights.' },{ id:'ttt-candy',game:'ttt',gameName:'Tic-Tac-Toe',name:'Candy pop',price:75000,a:'#e15f9c',b:'#865bdb',description:'A bright, sweet colorway.' },
 			{ id:'memory-classic',game:'memory',gameName:'Memory Match',name:'Midnight',price:0,a:'#242747',b:'#d6ff5f',description:'Classic moonlight cards.' },{ id:'memory-ocean',game:'memory',gameName:'Memory Match',name:'Deep sea',price:20000,a:'#087e9b',b:'#8de2e5',description:'Cool ocean blues.' },{ id:'memory-orchid',game:'memory',gameName:'Memory Match',name:'Orchid',price:75000,a:'#7346a8',b:'#ef9bd0',description:'A vivid purple flip side.' },
@@ -227,7 +273,9 @@
 			{ id:'connect4-classic',game:'connect4',gameName:'Connect Four',name:'Arcade blue',price:0,a:'#7385ff',b:'#d6ff5f',description:'A bright blue board for the classic challenge.' },
 			{ id:'minesweeper-classic',game:'minesweeper',gameName:'Minesweeper',name:'Signal grid',price:0,a:'#7385ff',b:'#d6ff5f',description:'Classic clean minefield tones for a careful sweep.' },
 			{ id:'roulette-classic',game:'roulette',gameName:'Roulette',name:'Single-zero felt',price:0,a:'#167148',b:'#d6ff5f',description:'Classic green felt and a single-zero wheel.' },
-			{ id:'chess-classic',game:'chess',gameName:'Chess',name:'Wooden board',price:0,a:'#7385ff',b:'#d6ff5f',description:'Classic ivory and forest chess pieces.' }
+			{ id:'chess-classic',game:'chess',gameName:'Chess',name:'Wooden board',price:0,a:'#7385ff',b:'#d6ff5f',description:'Classic ivory and forest chess pieces.' },
+			{ id:'fruit-classic',game:'fruit',gameName:'Fruit Drop',name:'Fruit bowl',price:0,a:'#7385ff',b:'#d6ff5f',description:'A sunny, juicy fruit board.' },
+			{ id:'cricket-classic',game:'cricket',gameName:'Cricket',name:'County green',price:0,a:'#28704f',b:'#d6ff5f',description:'A sunlit pitch and bright score markers.'}
 		];
 		// Game keys here are the central names: they connect the shelf buttons, renderer, and skin.game values.
 		const gameInfo = {
@@ -242,7 +290,9 @@
 			connect4:{title:'Connect Four',instructions:'You are yellow; the bot is red. Drop a disc into any column and connect four before the bot does.'},
 			minesweeper:{title:'Minesweeper',instructions:'Left-click to reveal safe tiles. Right-click to flag a suspected mine. Clear all safe tiles to win.'},
 			roulette:{title:'Roulette · free-play table',instructions:'European single-zero wheel. Choose red/black, even/odd, or a number. Bets use fictional NOT COIN and can create debt down to −300,000; spins are free practice at that limit.'},
-			chess:{title:'Chess · you play white',instructions:'Play as White against the computer. Select one of your pieces, then a highlighted square. Pawns promote to queens; castling and en passant are not included.'}
+			chess:{title:'Chess · you play white',instructions:'Play as White against the computer. Select one of your pieces, then a highlighted square. Pawns promote to queens; castling and en passant are not included.'},
+			fruit:{title:'Fruit Drop',instructions:'Tap a lane or use ← → and Space to drop. Matching fruit merges into the next fruit; chain merges earn bonus coins. The run ends when the board fills.'},
+			cricket:{title:'Cricket · One-over chase',instructions:'Chase the bot’s total in six balls. Start a delivery, then tap Swing or press Space when the ball arrives. Closer timing scores more runs; two wickets end your innings.'}
 		};
 		// ==== Screen elements and runtime state ==== //
 		// These references point at the play panel, wallet, skin shelf, and toast notifications.
@@ -251,9 +301,11 @@
 		let tttBoard=[],tttDone=false,memoryCards=[],memoryOpen=[],memoryMatched=new Set(),memoryMoves=0,memoryLocked=false,memoryPaid=false;
 		let chessBoard=[],chessSelected=-1,chessMoves=[],chessTurn='w',chessDone=false,chessThinking=false,chessTimer,slotSpinTimer,slotInterval,slotSpinning=false;
 		let connect4Board=[],connect4Done=false,connect4Winning=[];
+		let cricket=null,cricketTimer=null;
 		let grid=[],score2048=0,won2048=false,over2048=false,paid2048=0;
 		let poker=null,pokerTimer=null,pokerButton=-1,blackjack=null,bjStake=10,slotStats={spins:0,reels:['🍋','⭐','🍒']},rouletteState=null,rouletteTimer=null,monopoly=null,monopolyBotTimer=null;
 		let tetrisBoard=[],tetrisPiece=null,tetrisScore=0,tetrisLines=0,tetrisLevel=1,tetrisOver=false,tetrisSettled=false;
+		let fruitBodies=[],fruitNext=0,fruitScore=0,fruitOver=false,fruitMerges=0,fruitAim=180,fruitFrame=0,fruitLastDrop=0,fruitOverSince=0;
 		const winLines=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 		// ==== Wallet, debt, and local save helpers ==== //
 		// This is the browser-local economy: the pretend score balance, debt cap, and owned skins.
@@ -296,9 +348,9 @@
 		// ==== Shared game navigation ==== //
 		// openGame() resets timers and starts a fresh game; renderGame() is the central game-name -> renderer map.
 		// When adding a game, update renderGame() as well as the shelf button and gameInfo entry.
-		function closeGame(){panel.hidden=true;activeGame='';clearTimeout(memoryTimer);clearTimeout(tttTimer);clearTimeout(pokerTimer);clearTimeout(monopolyBotTimer);pokerTimer=null;monopolyBotTimer=null;stopTetrisLoop();document.querySelector('[data-game="ttt"]').focus({preventScroll:true})}
+		function closeGame(){panel.hidden=true;activeGame='';clearTimeout(memoryTimer);clearTimeout(tttTimer);clearTimeout(pokerTimer);clearTimeout(monopolyBotTimer);pokerTimer=null;monopolyBotTimer=null;stopTetrisLoop();stopCricket();stopFruit();document.querySelector('[data-game="ttt"]').focus({preventScroll:true})}
 		function openGame(game){if(activeGame==='roulette'&&rouletteState?.spinning){notify('Let the wheel finish before switching games.');return}if(!gameInfo[game])return;stopTetrisLoop();clearTimeout(memoryTimer);clearTimeout(tttTimer);clearTimeout(pokerTimer);clearTimeout(monopolyBotTimer);pokerTimer=null;monopolyBotTimer=null;activeGame=game;panel.hidden=false;title.textContent=gameInfo[game].title;instructions.textContent=gameInfo[game].instructions;setStageSkin(game);renderGame(true);panel.scrollIntoView({behavior:'smooth',block:'start'})}
-		function renderGame(reset){if(activeGame==='ttt')renderTtt(reset);else if(activeGame==='memory')renderMemory(reset);else if(activeGame==='2048')render2048(reset);else if(activeGame==='poker')renderPoker(reset);else if(activeGame==='blackjack')renderBlackjack(reset);else if(activeGame==='slots')renderSlots(reset);else if(activeGame==='tetris')renderTetris(reset);else if(activeGame==='monopoly')renderMonopoly(reset);else if(activeGame==='connect4')renderConnect4(reset);else if(activeGame==='minesweeper')renderMinesweeper(reset);else if(activeGame==='roulette')renderRoulette(reset);else if(activeGame==='chess')renderChess(reset)}
+		function renderGame(reset){if(activeGame!=='cricket')stopCricket();if(activeGame!=='fruit')stopFruit();if(activeGame==='ttt')renderTtt(reset);else if(activeGame==='memory')renderMemory(reset);else if(activeGame==='2048')render2048(reset);else if(activeGame==='poker')renderPoker(reset);else if(activeGame==='blackjack')renderBlackjack(reset);else if(activeGame==='slots')renderSlots(reset);else if(activeGame==='tetris')renderTetris(reset);else if(activeGame==='monopoly')renderMonopoly(reset);else if(activeGame==='connect4')renderConnect4(reset);else if(activeGame==='minesweeper')renderMinesweeper(reset);else if(activeGame==='roulette')renderRoulette(reset);else if(activeGame==='chess')renderChess(reset);else if(activeGame==='fruit')renderFruit(reset);else if(activeGame==='cricket')renderCricket(reset)}
 		document.querySelectorAll('[data-game]').forEach(button=>button.addEventListener('click',()=>openGame(button.dataset.game)));
 		document.querySelector('#close-game').addEventListener('click',closeGame);
 		document.querySelector('#restart-game').addEventListener('click',()=>{if(activeGame==='roulette'&&rouletteState?.spinning){notify('Let the wheel finish before restarting.');return}renderGame(true)});
@@ -670,6 +722,81 @@
 		function playConnect4(column){if(connect4Done||column<0||column>=connect4Columns||connect4Board[0][column])return;connect4Drop(connect4Board,column,'player');connect4Winning=connect4Four(connect4Board,'player');if(connect4Winning.length){finishConnect4('player');return}if(connect4Board.every(row=>row.every(Boolean))){finishConnect4('draw');return}const botColumn=chooseConnect4BotColumn();if(botColumn!==undefined)connect4Drop(connect4Board,botColumn,'bot');connect4Winning=connect4Four(connect4Board,'bot');if(connect4Winning.length){finishConnect4('bot');return}if(connect4Board.every(row=>row.every(Boolean))){finishConnect4('draw');return}renderConnect4(false);setStatus(`Bot dropped in column ${botColumn+1}. Your turn.`)}
 		function finishConnect4(result){if(connect4Done)return;connect4Done=true;if(result==='player')connect4Winning=connect4Four(connect4Board,'player');else if(result==='bot')connect4Winning=connect4Four(connect4Board,'bot');renderConnect4(false);const delta=changeCoins(result==='player'?12:result==='draw'?4:-4);resultText(result==='player'?'Four in a row — you beat the bot!':result==='draw'?'The board is full. It is a draw.':'The bot connected four.',delta)}
 
+		// ==== Cricket: a six-ball timing chase against a computer bowler ==== //
+		function simulateCricketBotInnings(){
+			let runs=0,wickets=0,balls=0;
+			while(balls<6&&wickets<2){
+				balls++;
+				if(Math.random()<.14)wickets++;
+				else runs+=[0,1,1,2,2,3,4,4,6][Math.floor(Math.random()*9)];
+			}
+			return{runs,wickets,balls};
+		}
+		function stopCricket(){clearTimeout(cricketTimer);cricketTimer=null}
+		function startCricket(){
+			stopCricket();
+			const bot=simulateCricketBotInnings();
+			cricket={bot,target:bot.runs+1,runs:0,wickets:0,balls:0,phase:'ready',deliveryAt:0,lastBall:'Start your chase — time your swing.'};
+			setStatus(`The bot scored ${bot.runs}/${bot.wickets}. Chase ${cricket.target} in six balls.`);
+		}
+		function renderCricket(reset){
+			if(reset||!cricket)startCricket();
+			const ballsLeft=6-cricket.balls;
+			const runsNeeded=Math.max(0,cricket.target-cricket.runs);
+			const callout=cricket.phase==='delivery'?'Swing as the ball reaches you!':cricket.phase==='done'?cricket.lastBall:'Start the delivery when you are ready.';
+			stage.innerHTML=`<div class="cricket-game"><div class="game-wallet">One-over chase · win +12 · tie +4 · loss −4 NOT COIN</div><div class="cricket-dashboard"><div class="cricket-score-head"><span>Bot innings · ${cricket.bot.runs}/${cricket.bot.wickets} in ${cricket.bot.balls} balls</span><strong>Target ${cricket.target}</strong></div><div class="cricket-score-grid"><div class="cricket-stat">Your score<strong>${cricket.runs}/${cricket.wickets}</strong></div><div class="cricket-stat">Balls left<strong>${ballsLeft}</strong></div><div class="cricket-stat">Runs needed<strong>${runsNeeded}</strong></div></div></div><div class="cricket-pitch${cricket.phase==='delivery'?' is-delivery':''}" role="img" aria-label="Cricket pitch. ${callout}"><div class="cricket-bowler"><span class="cricket-avatar">BOT</span><span>BOWLER</span></div><div class="cricket-batter"><span class="cricket-avatar">YOU</span><span>BATTER</span></div><span class="cricket-ball"></span><span class="cricket-bail"></span><span class="cricket-stumps"><i></i><i></i><i></i></span><span class="cricket-callout" aria-hidden="true">${callout}</span></div><div class="cricket-controls"><button class="action-button secondary" type="button" data-cricket="deliver" ${cricket.phase!=='ready'?'disabled':''}>Start delivery</button><button class="action-button" type="button" data-cricket="swing" ${cricket.phase!=='delivery'?'disabled':''}>Swing</button></div><p class="cricket-hint">Tap Swing or press Space when the ball arrives. Two wickets end your innings.</p></div>`;
+			stage.querySelectorAll('[data-cricket]').forEach(button=>button.addEventListener('click',()=>cricketAction(button.dataset.cricket)));
+			if(reset)setStatus(`The bot scored ${cricket.bot.runs}/${cricket.bot.wickets}. Chase ${cricket.target} in six balls.`);
+		}
+		function startCricketDelivery(){
+			if(!cricket||cricket.phase!=='ready'||cricket.balls>=6)return;
+			cricket.phase='delivery';
+			cricket.deliveryAt=performance.now();
+			cricket.lastBall='The ball is coming — time your swing!';
+			cricketTimer=setTimeout(()=>resolveCricketBall(0,false,'Dot ball — you missed the delivery.'),1050);
+			renderCricket(false);
+			stage.querySelector('[data-cricket="swing"]').focus({preventScroll:true});
+			setStatus(cricket.lastBall);
+		}
+		function hitCricketBall(){
+			if(!cricket||cricket.phase!=='delivery')return;
+			const timingError=Math.abs(performance.now()-cricket.deliveryAt-620);
+			if(timingError<=85)resolveCricketBall(6,false,'Perfect timing — six runs!');
+			else if(timingError<=180)resolveCricketBall(4,false,'Sweet shot — four runs!');
+			else if(timingError<=285)resolveCricketBall(2,false,'Good placement — two runs!');
+			else if(timingError<=420)resolveCricketBall(1,false,'Quick single!');
+			else if(Math.random()<.35)resolveCricketBall(0,true,'Too early — bowled! Wicket.');
+			else resolveCricketBall(0,false,'Mistimed shot — dot ball.');
+		}
+		function resolveCricketBall(runs,wicket,message){
+			if(!cricket||cricket.phase!=='delivery')return;
+			stopCricket();
+			cricket.balls++;
+			if(wicket)cricket.wickets++;
+			else cricket.runs+=runs;
+			cricket.lastBall=message;
+			const chased=cricket.runs>=cricket.target;
+			const inningsOver=cricket.balls>=6||cricket.wickets>=2;
+			if(chased||inningsOver){
+				cricket.phase='done';
+				const result=chased?'win':cricket.runs===cricket.bot.runs?'draw':'loss';
+				const delta=changeCoins(result==='win'?12:result==='draw'?4:-4);
+				cricket.lastBall=result==='win'?'You chased the target!':result==='draw'?'Scores level — match tied.':'The bot defended its total.';
+				renderCricket(false);
+				resultText(`${cricket.lastBall} Final score ${cricket.runs}/${cricket.wickets} from ${cricket.balls} balls.`,delta);
+				document.querySelector('#restart-game').focus({preventScroll:true});
+				return;
+			}
+			cricket.phase='ready';
+			renderCricket(false);
+			stage.querySelector('[data-cricket="deliver"]').focus({preventScroll:true});
+			setStatus(`${message} ${cricket.runs}/${cricket.wickets}; ${6-cricket.balls} balls left.`);
+		}
+		function cricketAction(action){
+			if(action==='deliver')startCricketDelivery();
+			else if(action==='swing')hitCricketBall();
+		}
+
 		// ==== Minesweeper ==== //
 		// The board stores either "M" for a mine or a neighboring-mine count; Sets track revealed cells and flags.
 		// buildMinesweeperBoard() controls board size/mine count; renderMinesweeper() builds the clickable grid.
@@ -718,7 +845,18 @@
 		function chessMove(from,to){const piece=chessBoard[Math.floor(from/8)][from%8],tr=Math.floor(to/8);chessBoard[tr][to%8]=(piece==='P'&&tr===0)?'Q':piece==='p'&&tr===7?'q':piece;chessBoard[Math.floor(from/8)][from%8]='.';chessSelected=-1;chessMoves=[]}
 		function chessClick(index){if(chessDone||chessThinking||chessTurn!=='w')return;const piece=chessBoard[Math.floor(index/8)][index%8];if(chessSelected>=0&&chessMoves.includes(index)){chessMove(chessSelected,index);chessTurn='b';renderChess(false);const replies=chessAllMoves(chessBoard,'b');if(!replies.length){chessDone=true;setStatus(chessInCheck(chessBoard,'b')?'Checkmate — you win!':'Draw by stalemate.');renderChess(false);return}chessThinking=true;setStatus('Bot is thinking…');chessTimer=setTimeout(()=>{if(activeGame!=='chess'||panel.hidden)return;const move=replies[Math.floor(Math.random()*replies.length)];chessMove(...move);chessTurn='w';chessThinking=false;const next=chessAllMoves(chessBoard,'w');if(!next.length){chessDone=true;setStatus(chessInCheck(chessBoard,'w')?'Checkmate — the bot wins.':'Draw by stalemate.')}else setStatus(chessInCheck(chessBoard,'w')?'You are in check. Make a move.':'Your move.');renderChess(false)},520);return}if(piece!=='.'&&chessSide(piece)==='w'){chessSelected=index;chessMoves=chessLegal(chessBoard,index)}else{chessSelected=-1;chessMoves=[]}renderChess(false)}
 		function renderChess(reset){if(reset)chessReset();const symbols='abcdefgh';stage.innerHTML=`<div class="chess-game"><div class="chess-topline"><span>White · you</span><span>Black · computer</span></div><div class="chess-board" role="grid" aria-label="Chess board">${chessBoard.flatMap((row,r)=>row.map((piece,c)=>{const index=r*8+c,selected=index===chessSelected,legal=chessMoves.includes(index),light=(r+c)%2===0;return`<button type="button" class="chess-square ${light?'light':'dark'}${selected?' selected':''}${legal?' legal':''}" role="gridcell" aria-label="${piece==='.'?'Empty':piece.toUpperCase()} on ${symbols[c]}${8-r}" ${chessDone||chessThinking||chessTurn!=='w'?'disabled':''} data-chess-square="${index}">${piece==='.'?'':`<span class="chess-piece ${chessSide(piece)==='w'?'white-piece':'black-piece'}">${chessGlyph[piece]}</span>`}${c===0?`<small>${8-r}</small>`:''}${r===7?`<small class="file">${symbols[c]}</small>`:''}</button>`}).join('')).join('')}</div><p class="chess-caption">Select a white piece to see its legal moves.</p></div>`;stage.querySelectorAll('[data-chess-square]').forEach(button=>button.addEventListener('click',()=>chessClick(Number(button.dataset.chessSquare))));if(reset)setStatus('Your move. Choose a white piece.')}
-		document.addEventListener('keydown',event=>{if(panel.hidden||/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName))return;if(activeGame==='2048'){const keys={ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right',ArrowUp:'up',w:'up',W:'up',ArrowDown:'down',s:'down',S:'down'},direction=keys[event.key];if(direction){event.preventDefault();slide(direction)}}if(activeGame==='tetris'){const keys={ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right',ArrowDown:'down',s:'down',S:'down',ArrowUp:'rotate',w:'rotate',W:'rotate',' ':'drop'},action=keys[event.key];if(action){event.preventDefault();tetrisControl(action)}}});
+		const fruitTypes=['🍒','🍓','🍇','🍊','🍎','🍐','🍉','🍍'];
+		const fruitRadii=[15,20,26,33,41,50,60,70];
+		function stopFruit(){if(fruitFrame)cancelAnimationFrame(fruitFrame);fruitFrame=0}
+		function setFruitAim(x){const r=fruitRadii[fruitNext];fruitAim=Math.max(r+5,Math.min(355-r,x))}
+		function renderFruit(reset){stopFruit();if(reset){fruitBodies=[];fruitNext=Math.floor(Math.random()*4);fruitScore=0;fruitMerges=0;fruitAim=180;fruitOver=false;fruitLastDrop=0;fruitOverSince=0}stage.innerHTML=`<div class="fruit-game"><div class="fruit-hud"><div class="fruit-stat">Fruit score<strong data-fruit-score>${fruitScore}</strong></div><div class="fruit-stat">Merges<strong data-fruit-merges>${fruitMerges}</strong></div></div><div class="fruit-next">Next fruit <strong data-fruit-next>${fruitTypes[fruitNext]}</strong></div><canvas class="fruit-canvas" width="360" height="500" aria-label="Fruit Drop physics board. Move to aim, click or tap to drop fruit."></canvas><div class="fruit-hint">Move to aim, then click or tap to drop · ← → to aim, Space to drop</div></div>`;const canvas=stage.querySelector('.fruit-canvas'),ctx=canvas.getContext('2d');canvas.addEventListener('pointermove',event=>{const rect=canvas.getBoundingClientRect();setFruitAim((event.clientX-rect.left)*360/rect.width)});canvas.addEventListener('pointerdown',event=>{event.preventDefault();const rect=canvas.getBoundingClientRect();setFruitAim((event.clientX-rect.left)*360/rect.width);dropFruit()});if(reset)setStatus('Aim and drop fruit. Matching fruit bump together and merge!');const draw=()=>{if(activeGame!=='fruit'||panel.hidden)return;updateFruitPhysics();ctx.clearRect(0,0,360,500);ctx.fillStyle='#dfe7ff';ctx.fillRect(0,0,360,500);ctx.strokeStyle='rgba(77,83,132,.38)';ctx.lineWidth=2;ctx.setLineDash([7,7]);ctx.beginPath();ctx.moveTo(0,66);ctx.lineTo(360,66);ctx.stroke();ctx.setLineDash([]);ctx.strokeStyle='#59618e';ctx.lineWidth=7;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(0,500);ctx.lineTo(360,500);ctx.lineTo(360,0);ctx.stroke();if(!fruitOver){ctx.globalAlpha=.65;drawFruit(ctx,fruitAim,30,fruitNext);ctx.globalAlpha=1;ctx.strokeStyle='rgba(73,78,120,.3)';ctx.setLineDash([3,5]);ctx.beginPath();ctx.moveTo(fruitAim,40);ctx.lineTo(fruitAim,465);ctx.stroke();ctx.setLineDash([])}fruitBodies.forEach(body=>drawFruit(ctx,body.x,body.y,body.type));if(fruitOver){ctx.fillStyle='rgba(28,30,57,.68)';ctx.fillRect(0,0,360,500);ctx.fillStyle='#fff';ctx.textAlign='center';ctx.font='900 25px ui-rounded, sans-serif';ctx.fillText('Basket full!',180,235);ctx.font='700 14px ui-rounded, sans-serif';ctx.fillText(`Score ${fruitScore} · restart to try again`,180,263)}fruitFrame=requestAnimationFrame(draw)};fruitFrame=requestAnimationFrame(draw)}
+		function drawFruit(ctx,x,y,type){const radius=fruitRadii[type];ctx.save();ctx.translate(x,y);ctx.shadowColor='rgba(34,36,72,.2)';ctx.shadowBlur=4;ctx.shadowOffsetY=3;ctx.fillStyle=['#ffb4c8','#ff856f','#a86dcc','#ffb834','#ef4f4d','#88bd48','#ef5266','#f1ae33'][type];ctx.beginPath();ctx.arc(0,0,radius,0,Math.PI*2);ctx.fill();ctx.shadowColor='transparent';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font=`${Math.round(radius*1.25)}px serif`;ctx.fillText(fruitTypes[type],0,1);ctx.restore()}
+		function dropFruit(){if(activeGame!=='fruit'||fruitOver||Date.now()-fruitLastDrop<420)return;fruitLastDrop=Date.now();fruitBodies.push({x:fruitAim,y:35,vx:0,vy:0,type:fruitNext,r:fruitRadii[fruitNext],mergeWait:.42,age:0});fruitNext=Math.floor(Math.random()*4);setFruitAim(fruitAim);const next=stage.querySelector('[data-fruit-next]');if(next)next.textContent=fruitTypes[fruitNext]}
+		function updateFruitPhysics(){const dt=1/60;for(const body of fruitBodies){body.age+=dt;body.mergeWait=Math.max(0,body.mergeWait-dt);body.vy=Math.min(body.vy+.24,9);body.x+=body.vx;body.y+=body.vy;body.vx*=.997;if(body.x<body.r+3){body.x=body.r+3;body.vx=Math.abs(body.vx)*.45}if(body.x>357-body.r){body.x=357-body.r;body.vx=-Math.abs(body.vx)*.45}if(body.y>497-body.r){body.y=497-body.r;body.vy=-Math.abs(body.vy)*.22;body.vx*=.92;if(Math.abs(body.vy)<.7)body.vy=0}}
+			for(let i=0;i<fruitBodies.length;i++)for(let j=i+1;j<fruitBodies.length;j++){const a=fruitBodies[i],b=fruitBodies[j],dx=b.x-a.x,dy=b.y-a.y,dist=Math.hypot(dx,dy)||.01,min=a.r+b.r;if(dist>=min)continue;if(a.type===b.type&&a.mergeWait===0&&b.mergeWait===0&&a.type<fruitTypes.length-1){const nextType=a.type+1,merged={x:(a.x+b.x)/2,y:(a.y+b.y)/2,vx:(a.vx+b.vx)/2,vy:Math.min(a.vy,b.vy)-1.4,type:nextType,r:fruitRadii[nextType],mergeWait:.2,age:0};fruitBodies.splice(j,1);fruitBodies.splice(i,1);fruitBodies.push(merged);fruitMerges++;fruitScore+=nextType*nextType*10;const reward=Math.min(15,1+nextType*2);changeCoins(reward);const scoreEl=stage.querySelector('[data-fruit-score]'),mergeEl=stage.querySelector('[data-fruit-merges]');if(scoreEl)scoreEl.textContent=String(fruitScore);if(mergeEl)mergeEl.textContent=String(fruitMerges);setStatus(`Merge! ${fruitTypes[nextType]} · +${reward} NOT COIN`);return updateFruitPhysics()}const overlap=min-dist,nx=dx/dist,ny=dy/dist;a.x-=nx*overlap*.5;a.y-=ny*overlap*.5;b.x+=nx*overlap*.5;b.y+=ny*overlap*.5;const impact=(b.vx-a.vx)*nx+(b.vy-a.vy)*ny;if(impact<0){const impulse=-impact*.48;a.vx-=impulse*nx;a.vy-=impulse*ny;b.vx+=impulse*nx;b.vy+=impulse*ny}}
+			const danger=fruitBodies.some(body=>body.y-body.r<66&&body.age>.8);if(danger){if(!fruitOverSince)fruitOverSince=Date.now();else if(Date.now()-fruitOverSince>1100){fruitOver=true;setStatus(`Basket full · final score ${fruitScore}. Restart to play again.`)}}else fruitOverSince=0}
+		document.addEventListener('keydown',event=>{if(panel.hidden||/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName))return;if(activeGame==='2048'){const keys={ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right',ArrowUp:'up',w:'up',W:'up',ArrowDown:'down',s:'down',S:'down'},direction=keys[event.key];if(direction){event.preventDefault();slide(direction)}}if(activeGame==='tetris'){const keys={ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right',ArrowDown:'down',s:'down',S:'down',ArrowUp:'rotate',w:'rotate',W:'rotate',' ':'drop'},action=keys[event.key];if(action){event.preventDefault();tetrisControl(action)}}if(activeGame==='fruit'){if(event.key==='ArrowLeft'||event.key==='a'||event.key==='A'){event.preventDefault();setFruitAim(fruitAim-22)}else if(event.key==='ArrowRight'||event.key==='d'||event.key==='D'){event.preventDefault();setFruitAim(fruitAim+22)}else if(event.code==='Space'){event.preventDefault();dropFruit()}}});
+		document.addEventListener('keydown',event=>{if(panel.hidden||activeGame!=='cricket'||event.code!=='Space'||event.repeat||!(event.target instanceof Element)||!event.target.closest('.cricket-game'))return;event.preventDefault();cricketAction(cricket?.phase==='delivery'?'swing':'deliver')});
 		stage.addEventListener('touchstart',event=>{if(activeGame!=='2048'||!event.changedTouches.length)return;touchStart=[event.changedTouches[0].clientX,event.changedTouches[0].clientY]},{passive:true});
 		stage.addEventListener('touchend',event=>{if(!touchStart||activeGame!=='2048'||!event.changedTouches.length)return;const dx=event.changedTouches[0].clientX-touchStart[0],dy=event.changedTouches[0].clientY-touchStart[1];touchStart=null;if(Math.max(Math.abs(dx),Math.abs(dy))<24)return;slide(Math.abs(dx)>Math.abs(dy)?dx>0?'right':'left':dy>0?'down':'up')},{passive:true});
 		document.querySelector('[data-refill]')?.addEventListener('click',()=>{});
